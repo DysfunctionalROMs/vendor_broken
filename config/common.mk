@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
     vendor/broken/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
-    
+
 # Added xbin files
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/xbin/zip:system/xbin/zip \
@@ -61,11 +61,11 @@ PRODUCT_COPY_FILES += \
 # Workaround for NovaLauncher zipalign fails
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
-    
+
 # OmniSwitch
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch.apk
-    
+
 # Viper4Android
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
@@ -73,7 +73,7 @@ PRODUCT_COPY_FILES += \
 # LockClock
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/LockClock.apk:system/app/LockClock.apk
-    
+
 #Init.d Support
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -109,6 +109,11 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+# HFM Files
+PRODUCT_COPY_FILES += \
+	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
+	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -146,7 +151,7 @@ PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat
-    
+
 # Stagefright FFMPEG plugin
 #PRODUCT_PACKAGES += \
 #    libstagefright_soft_ffmpegadec \
@@ -207,7 +212,7 @@ endif
 # Set Broken versions (DO NOT TOUCH)
 BROKEN_VERSION := Broken-$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_VERSION_MAJOR)-$(shell date +%Y%m%d-%H%M)
 BROKEN_MOD_VERSION := Broken-$(BROKEN_BUILD)-$(BROKEN_VERSION_MAJOR).$(BROKEN_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_BUILD_TYPE)$(BROKEN_POSTFIX)
-  
+
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
