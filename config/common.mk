@@ -112,7 +112,8 @@ PRODUCT_COPY_FILES += \
 
 # HFM Files
 PRODUCT_COPY_FILES += \
-	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt
+	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
+	vendor/liquid/prebuilt/etc/hosts.og:system/etc/hosts.og
 
 # Required packages
 PRODUCT_PACKAGES += \
