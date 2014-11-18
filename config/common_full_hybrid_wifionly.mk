@@ -1,7 +1,7 @@
 # Inherit common stuff
-$(call inherit-product, vendor/slim/config/common.mk)
+$(call inherit-product, vendor/broken/config/common.mk)
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/tablet
+PRODUCT_PACKAGE_OVERLAYS += vendor/broken/overlay/tablet
 
 # BT config
 PRODUCT_COPY_FILES += \

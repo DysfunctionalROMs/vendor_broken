@@ -26,22 +26,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
-    vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
-    vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    vendor/broken/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/broken/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/broken/prebuilt/common/bin/50-broken.sh:system/addon.d/50-broken.sh \
+    vendor/broken/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
+    vendor/broken/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
-# SLIM-specific init file
+# Broken-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.local.rc:root/init.slim.rc
+    vendor/broken/prebuilt/common/etc/init.local.rc:root/init.broken.rc
 
 # Copy latinime for gesture typing
 
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -49,24 +49,52 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/broken/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/broken/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    
+#Init.d Support
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/broken/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
+    vendor/broken/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
+    vendor/broken/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
+    vendor/broken/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+    vendor/broken/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
+    vendor/broken/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
+    vendor/broken/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
+    vendor/broken/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
+    vendor/broken/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+    vendor/broken/prebuilt/common/etc/init.d/11battery:system/etc/init.d/11battery \
+    vendor/broken/prebuilt/common/etc/init.d/12touch:system/etc/init.d/12touch \
+    vendor/broken/prebuilt/common/etc/init.d/13minfree:system/etc/init.d/13minfree \
+    vendor/broken/prebuilt/common/etc/init.d/14gpurender:system/etc/init.d/14gpurender \
+    vendor/broken/prebuilt/common/etc/init.d/15sleepers:system/etc/init.d/15sleepers \
+    vendor/broken/prebuilt/common/etc/init.d/16journalism:system/etc/init.d/16journalism \
+    vendor/broken/prebuilt/common/etc/init.d/17sqlite3:system/etc/init.d/17sqlite3 \
+    vendor/broken/prebuilt/common/etc/init.d/18wifisleep:system/etc/init.d/18wifisleep \
+    vendor/broken/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
+    vendor/broken/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
+    vendor/broken/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
+    vendor/broken/prebuilt/common/etc/init.d/24speedy_modified:system/etc/init.d/24speedy_modified \
+    vendor/broken/prebuilt/common/etc/init.d/25loopy_smoothness_tweak:system/etc/init.d/25loopy_smoothness_tweak \
+    vendor/broken/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/broken/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
+    vendor/broken/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
+    vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-# Embed SuperUser
-SUPERUSER_EMBEDDED := true
+    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts \
-    Superuser \
-    su
+    AndroidKernelTweaker \
+    SuperSU
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -77,16 +105,10 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# DSPManager
-PRODUCT_PACKAGES += \
-    DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf
-
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimCenter \
-    SlimLauncher \
+    BrokenCenter \
+    BrokenOsWalls \
     LatinIME \
     BluetoothExt \
     DashClock
@@ -106,7 +128,7 @@ PRODUCT_PACKAGES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/broken/overlay/common
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -120,7 +142,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/slim/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/broken/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -137,41 +159,32 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/broken/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
 # Versioning System
-# SlimLP first version.
-PRODUCT_VERSION_MAJOR = 5.0
-PRODUCT_VERSION_MINOR = alpha
-PRODUCT_VERSION_MAINTENANCE = 0.2
-ifdef SLIM_BUILD_EXTRA
-    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
-endif
-ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
-    PLATFORM_VERSION_CODENAME := UNOFFICIAL
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+# BrokenOs freeze code
+RELEASE = FALSE
+BROKEN_VERSION_MAJOR = 5.0
+BROKEN_VERSION_MINOR = build
+PRODUCT_VERSION_MAINTENANCE = 2.0-testing
+
+ifeq ($(RELEASE),TRUE)
+PLATFORM_VERSION_CODENAME := OFFICIAL
+else
+PLATFORM_VERSION_CODENAME := UNOFFICIAL
 endif
 
-# SlimIRC
-# export INCLUDE_SLIMIRC=1 for unofficial builds
-ifneq ($(filter WEEKLY OFFICIAL,$(SLIM_BUILD_TYPE)),)
-    INCLUDE_SLIMIRC = 1
-endif
-
-ifneq ($(INCLUDE_SLIMIRC),)
-    PRODUCT_PACKAGES += SlimIRC
-endif
-
-# Set all versions
-SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
-SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+# Set Broken versions (DO NOT TOUCH)
+BROKEN_VERSION := Broken-$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_VERSION_MAJOR)-$(shell date +%Y%m%d-%H%M)
+BROKEN_MOD_VERSION := Broken-$(BROKEN_BUILD)-$(BROKEN_VERSION_MAJOR).$(BROKEN_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_BUILD_TYPE)$(BROKEN_POSTFIX)
+  
+# by default, do not update the recovery with system updates
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION) \
-    ro.slim.buildtype=$(SLIM_BUILD_TYPE)
-
+    broken.ota.version=$(BROKEN_VERSION_MAJOR).$(BROKEN_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
+    ro.broken.version=$(BROKEN_VERSION) \
+    ro.modversion=$(BROKEN_MOD_VERSION) \
+    ro.broken.buildtype=$(BROKEN_BUILD_TYPE)

@@ -44,6 +44,12 @@ if [ $? -eq 0 ]; then
   LABELDALVIKCACHE=1
 fi
 
+ls -Zd /cache/dalvik-cache | grep -q unlabeled
+if [ $? -eq 0 ]; then
+  $L "dalvik-cache is unlabeled, fixing..."
+  LABELDALVIKCACHE=1
+fi
+
 if [ $LABELSYS = "1" ]; then
   busybox mount -o remount,rw /system
   $L "/system relabel starting..."

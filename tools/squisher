@@ -37,7 +37,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
     exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/broken/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_MEDIA="*.qmg"
@@ -139,7 +139,7 @@ rm -rf $REPACK/ota/system/etc/recovery-resource.dat
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
-# Fix LCD Density for slim
+# Fix LCD Density for broken
 DEVICELCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $OUT/system/build.prop`
 if [ "$DEVICELCD" = "240" ]; then
    sed -i 's/ro.sf.lcd_density=240/ro.sf.lcd_density=182/g' $OUT/system/build.prop
@@ -177,10 +177,10 @@ CAMERARESOLUTION=`sed -n -e'/ro\.camera\.res/s/^.*=//p' $REPACK/ota/system/build
 #fi
 
 # Swap boot.img
-PREBUILTKERNEL=$OUT/system/slimkernel/boot.img
+PREBUILTKERNEL=$OUT/system/brokenkernel/boot.img
 if [ -e "$PREBUILTKERNEL" ];then
    rm -f $REPACK/ota/boot.img
-   mv -f $REPACK/ota/system/slimkernel/boot.img $REPACK/ota/boot.img
+   mv -f $REPACK/ota/system/brokenkernel/boot.img $REPACK/ota/boot.img
 fi
 
 # Determine what to name the new signed package
