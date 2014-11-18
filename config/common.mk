@@ -107,11 +107,11 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    BrokenCenter \
     BrokenOsWalls \
     LatinIME \
     BluetoothExt \
     DashClock
+#   BrokenCenter
 
 #    SlimFileManager removed until updated
 
