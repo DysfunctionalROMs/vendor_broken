@@ -53,6 +53,27 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
     vendor/broken/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
     
+# Added xbin files
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/xbin/zip:system/xbin/zip \
+    vendor/broken/prebuilt/common/xbin/zipalign:system/xbin/zipalign
+
+# Workaround for NovaLauncher zipalign fails
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
+    
+# OmniSwitch
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch.apk
+    
+# Viper4Android
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
+
+# LockClock
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/LockClock.apk:system/app/LockClock.apk
+    
 #Init.d Support
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
