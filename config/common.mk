@@ -37,7 +37,8 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.local.rc:root/init.broken.rc
 
 # Copy latinime for gesture typing
-
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
@@ -111,7 +112,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     DashClock
-#   BrokenCenter
+   #BrokenCenter
 
 #    SlimFileManager removed until updated
 
