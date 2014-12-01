@@ -18,17 +18,16 @@
 if [ $# -eq 1 ]; then
     TOP=$1
     DEVICE=$TARGET_DEVICE
-    TARGET_DIR=$OUT
 elif [ -n "$(gettop)" ]; then
     TOP=$(gettop)
     DEVICE=$(get_build_var TARGET_DEVICE)
-    TARGET_DIR=$(get_build_var OUT_DIR)/target/product/$DEVICE
 else
     echo "Please run envsetup.sh and lunch before running this script,"
     echo "or provide the build root directory as the first parameter."
     return 1
 fi
 
+TARGET_DIR=$OUT
 PREBUILT_DIR=$TOP/prebuilts/chromium/$DEVICE
 
 if [ -d $PREBUILT_DIR ]; then
