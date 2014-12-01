@@ -1,4 +1,4 @@
-add_lunch_combo broken_d2lte-userdebug
+add_lunch_combo broken_d2att-userdebug
 add_lunch_combo broken_d851-userdebug
 add_lunch_combo broken_dlx-userdebug
 add_lunch_combo broken_exhilarate-userdebug
