@@ -114,6 +114,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
+	
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 # Required packages
 PRODUCT_PACKAGES += \
