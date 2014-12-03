@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
-	
+
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
@@ -204,9 +204,9 @@ endif
 # Versioning System
 # BrokenOs freeze code
 RELEASE = FALSE
-BROKEN_VERSION_MAJOR = 5.0
+BROKEN_VERSION_MAJOR = 5.0.1
 BROKEN_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 2.0-testing
+PRODUCT_VERSION_MAINTENANCE = 1.0-testing
 
 ifeq ($(RELEASE),TRUE)
 PLATFORM_VERSION_CODENAME := OFFICIAL
