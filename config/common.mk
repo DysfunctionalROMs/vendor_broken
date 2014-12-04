@@ -115,9 +115,6 @@ PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
 
-# Embed SuperUser
-SUPERUSER_EMBEDDED := true
-
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
@@ -129,8 +126,7 @@ PRODUCT_PACKAGES += \
     Development \
     SpareParts \
     AndroidKernelTweaker \
-    Superuser \
-    su
+    SuperSu
 
 # Optional packages
 PRODUCT_PACKAGES += \
