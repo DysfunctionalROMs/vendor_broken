@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/LockClock.apk:system/app/LockClock.apk
 
 #Init.d Support
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/broken/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
@@ -111,10 +111,10 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # HFM Files
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
-	
+
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
 
