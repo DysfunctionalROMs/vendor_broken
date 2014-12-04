@@ -114,6 +114,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
 	vendor/broken/prebuilt/etc/hosts.og:system/etc/hosts.og
+	
+# Embed SuperUser
+SUPERUSER_EMBEDDED := true
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -126,7 +129,8 @@ PRODUCT_PACKAGES += \
     Development \
     SpareParts \
     AndroidKernelTweaker \
-    SuperSU
+    Superuser \
+    su
 
 # Optional packages
 PRODUCT_PACKAGES += \
