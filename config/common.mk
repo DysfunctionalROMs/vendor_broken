@@ -36,10 +36,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.local.rc:root/init.broken.rc
 
-# Copy latinime for gesture typing
-#PRODUCT_COPY_FILES += \
-#   vendor/broken/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
-
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
