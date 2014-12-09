@@ -135,9 +135,6 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
-    HoloSpiralWallpaper \
-    NoiseField \
-    Galaxy4 \
     LiveWallpapersPicker \
     PhaseBeam
 
