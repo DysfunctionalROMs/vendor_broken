@@ -28,8 +28,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/broken/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/broken/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/broken/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/broken/prebuilt/common/bin/50-broken.sh:system/addon.d/50-broken.sh \
     vendor/broken/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/broken/prebuilt/common/etc/backup.conf:system/etc/backup.conf
