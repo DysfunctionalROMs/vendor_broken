@@ -43,7 +43,7 @@ if [ -d $TARGET_DIR ]; then
     echo "Copying files..."
     cp -r $TARGET_DIR/system/app/webview $PREBUILT_DIR/app/
     cp $TARGET_DIR/system/lib/libwebviewchromium.so $PREBUILT_DIR/lib/libwebviewchromium.so
-    cp $TARGET_DIR/../../common/obj/JAVA_LIBRARIES/android_webview_java_intermediates/javalib.jar $PREBUILT_DIR/android_webview_java.jar
+    cp $TARGET_DIR/../../common/obj/JAVA_LIBRARIES/android_webview_java_with_new_resources_intermediates/javalib.jar $PREBUILT_DIR/android_webview_java.jar
 else
     echo "Please ensure that you have ran a full build prior to running this script!"
     return 1;
