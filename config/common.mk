@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     DashClock
    #BrokenCenter
+   
+# AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
 
 #    SlimFileManager removed until updated
 
