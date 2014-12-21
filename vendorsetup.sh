@@ -17,6 +17,7 @@ add_lunch_combo broken_moto_msm8960dt-userdebug
 add_lunch_combo broken_p930-userdebug
 add_lunch_combo broken_quincyatt-userdebug
 add_lunch_combo broken_quincytmo-userdebug
+add_lunch_combo broken_shamu-userdebug
 add_lunch_combo broken_skyrocket-userdebug
 add_lunch_combo broken_t769-userdebug
 add_lunch_combo broken_toro-userdebug
