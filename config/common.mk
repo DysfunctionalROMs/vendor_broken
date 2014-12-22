@@ -143,8 +143,8 @@ PRODUCT_PACKAGES += \
     BrokenOsWalls \
     LatinIME \
     BluetoothExt \
-    DashClock
-   #BrokenCenter
+    DashClock \
+    BrokenCenter
    
 # AudioFX
 PRODUCT_PACKAGES += \
