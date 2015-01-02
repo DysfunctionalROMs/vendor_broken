@@ -1,3 +1,5 @@
+PRODUCT_BRAND ?= BrokenOs
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -48,6 +50,11 @@ PRODUCT_COPY_FILES += \
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
