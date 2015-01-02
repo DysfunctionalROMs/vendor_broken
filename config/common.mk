@@ -79,10 +79,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
 
-# LockClock
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/LockClock.apk:system/app/LockClock.apk
-
 #Init.d Support
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -149,6 +145,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     DashClock \
+    LockClock \
     BrokenCenter
    
 # AudioFX
