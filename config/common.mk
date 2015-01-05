@@ -146,7 +146,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     DashClock \
     LockClock \
-    BrokenCenter
+    BrokenCenter \
+    Terminal
    
 # AudioFX
 PRODUCT_PACKAGES += \
