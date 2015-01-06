@@ -6,6 +6,7 @@ add_lunch_combo broken_deb-userdebug
 add_lunch_combo broken_dlx-userdebug
 add_lunch_combo broken_falcon-userdebug
 add_lunch_combo broken_flo-userdebug
+add_lunch_combo broken_flounder-userdebug
 add_lunch_combo broken_grouper-userdebug
 add_lunch_combo broken_hammerhead-userdebug
 add_lunch_combo broken_l900-userdebug
