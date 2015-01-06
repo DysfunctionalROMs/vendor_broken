@@ -2,6 +2,7 @@ add_lunch_combo broken_bacon-userdebug
 add_lunch_combo broken_d2att-userdebug
 add_lunch_combo broken_d851-userdebug
 add_lunch_combo broken_d852-userdebug
+add_lunch_combo broken_deb-userdebug
 add_lunch_combo broken_dlx-userdebug
 add_lunch_combo broken_exhilarate-userdebug
 add_lunch_combo broken_falcon-userdebug
