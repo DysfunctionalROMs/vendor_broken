@@ -29,3 +29,4 @@ add_lunch_combo broken_toro-userdebug
 add_lunch_combo broken_trltespr-userdebug 
 add_lunch_combo broken_ville-userdebug
 add_lunch_combo broken_vs980-userdebug
+add_lunch_combo broken_w7-userdebug
