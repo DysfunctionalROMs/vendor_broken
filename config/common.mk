@@ -146,7 +146,6 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts \
-    AndroidKernelTweaker \
     SuperSu
 
 # Optional packages
