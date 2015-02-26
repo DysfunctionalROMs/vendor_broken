@@ -91,6 +91,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
 
+# KernelAdiutor
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor.apk
+
 #Init.d Support
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
