@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= BrokenOs
+PRODUCT_BRAND ?= Broken
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -230,7 +230,7 @@ endif
 
 # Versioning System
 # BrokenOs freeze code
-RELEASE = FALSE
+RELEASE = TRUE
 BROKEN_VERSION_MAJOR = 5.0.2
 BROKEN_VERSION_MINOR = build
 BROKEN_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
