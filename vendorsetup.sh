@@ -21,7 +21,7 @@ add_lunch_combo broken_m7vzw-userdebug
 add_lunch_combo broken_m8-userdebug
 add_lunch_combo broken_mako-userdebug
 add_lunch_combo broken_moto_msm8960dt-userdebug
-add_lunch_combo broken_n6-lz-userdebug
+add_lunch_combo broken_n6lz-userdebug
 add_lunch_combo broken_p930-userdebug
 add_lunch_combo broken_quincyatt-userdebug
 add_lunch_combo broken_quincytmo-userdebug
