@@ -187,9 +187,9 @@ PRODUCT_PACKAGES += \
 #    libnamparser
 
 # Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
+#PRODUCT_PACKAGES += \
+#    ScreenRecorder \
+#    libscreenrecorder
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
