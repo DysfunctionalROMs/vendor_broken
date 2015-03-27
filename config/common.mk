@@ -331,7 +331,7 @@ endif
 
 # Set all versions
 BROKEN_VERSION := Broken-$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_BUILD)-$(BROKEN_VERSION_MAJOR)-$(PLATFORM_VERSION_CODENAME)$(BROKEN_POSTFIX)
-BROKEN_MOD_VERSION := Broken-$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_BUILD)-$(BROKEN_VERSION_MAJOR)-$(PLATFORM_VERSION_CODENAME)$(BROKEN_POSTFIX)
+BROKEN_MOD_VERSION := Broken-$(PRODUCT_VERSION_MAINTENANCE)
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
@@ -340,7 +340,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     broken.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
     ro.broken.version=$(BROKEN_VERSION) \
-    ro.modversion=$(BROKEN_MOD_VERSION) \
+    ro.mod.version=$(BROKEN_MOD_VERSION) \
     ro.broken.buildtype=$(BROKEN_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
