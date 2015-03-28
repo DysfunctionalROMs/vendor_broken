@@ -162,10 +162,6 @@ PRODUCT_PACKAGES += \
     DashClock \
     LockClock \
     BrokenCenter
-   
-# AudioFX
-PRODUCT_PACKAGES += \
-    AudioFX
 
 #    SlimFileManager removed until updated
 
