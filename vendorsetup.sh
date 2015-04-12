@@ -3,6 +3,7 @@ add_lunch_combo broken_bacon-userdebug
 add_lunch_combo broken_condor-userdebug
 add_lunch_combo broken_d2att-userdebug
 add_lunch_combo broken_d2tmo-userdebug
+add_lunch_combo broken_d2usc-userdebug
 add_lunch_combo broken_d2vzw-userdebug
 add_lunch_combo broken_d851-userdebug
 add_lunch_combo broken_d852-userdebug
