@@ -158,6 +158,48 @@ PRODUCT_COPY_FILES += \
     vendor/broken/proprietary/common/system/media/audio/ui/VideoStop.ogg:system/media/audio/ui/VideoStop.ogg \
     vendor/broken/proprietary/common/system/media/audio/ui/WirelessChargingStarted.ogg:system/media/audio/ui/WirelessChargingStarted.ogg
 
+# Alarms
+PRODUCT_COPY_FILES += \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Argon.ogg:system/media/audio/alarms/Argon.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Helium.ogg:system/media/audio/alarms/Helium.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Neon.ogg:system/media/audio/alarms/Neon.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Osmium.ogg:system/media/audio/alarms/Osmium.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Oxygen.ogg:system/media/audio/alarms/Oxygen.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Platinum.ogg:system/media/audio/alarms/Platinum.ogg \
+    vendor/broken/proprietary/common/system/media/audio/alarms/Timer.ogg:system/media/audio/alarms/Timer.ogg
+
+# Ringtones
+PRODUCT_COPY_FILES += \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Atria.ogg:system/media/audio/ringtones/Atria.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Dione.ogg:system/media/audio/ringtones/Dione.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Ganymede.ogg:system/media/audio/ringtones/Ganymede.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/ImBroken.ogg:system/media/audio/ringtones/ImBroken.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Luna.ogg:system/media/audio/ringtones/Luna.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
+    vendor/broken/proprietary/common/system/media/audio/ringtones/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg
+
+# Notifications
+PRODUCT_COPY_FILES += \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Ariel.ogg:system/media/audio/notifications/Ariel.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Carme.ogg:system/media/audio/notifications/Carme.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Ceres.ogg:system/media/audio/notifications/Ceres.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Elara.ogg:system/media/audio/notifications/Elara.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Europa.ogg:system/media/audio/notifications/Europa.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Iapetus.ogg:system/media/audio/notifications/Iapetus.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Io.ogg:system/media/audio/notifications/Io.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Rhea.ogg:system/media/audio/notifications/Rhea.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Salacia.ogg:system/media/audio/notifications/Salacia.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Tethys.ogg:system/media/audio/notifications/Tethys.ogg \
+    vendor/broken/proprietary/common/system/media/audio/notifications/Titan.ogg:system/media/audio/notifications/Titan.ogg
+
 # HFM Files
 PRODUCT_COPY_FILES += \
 	vendor/broken/prebuilt/etc/hosts.alt:system/etc/hosts.alt \
