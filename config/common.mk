@@ -218,7 +218,8 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     VideoEditor \
     VoiceDialer \
-    BrokenPieces
+    BrokenPieces \
+    LockClock
 
 # Additional apps
 PRODUCT_PACKAGES += \
