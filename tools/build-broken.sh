@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export BEEP=vendor/broken/proprietary/common/system/media/audio/ringtones/ImBroken.ogg
+
 usage()
 {
     echo -e ""
@@ -225,6 +227,8 @@ else
     make -j"$opt_jobs" broken
 
 fi
+
+play $BEEP &> /dev/null
 
 # finished? get elapsed time
 t2=$($DATE +%s)
