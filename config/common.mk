@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/xbin/zipalign:system/xbin/zipalign
 
 # Layers Theme
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/broken/config/permissions/com.layers.theme.xml:system/etc/permissions/com.layers.theme.xml \
     vendor/broken/prebuilt/common/etc/Layers.apk:system/app/Layers/Layers.apk
 
@@ -80,7 +80,7 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
 
 # OmniSwitch
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch.apk
 
 # Proprietary latinime lib needed for Keyboard swyping
@@ -210,39 +210,48 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Required packages
-PRODUCT_PACKAGES += \
-    CellBroadcastReceiver \
-    Development \
-    SpareParts \
-    SuperSu
-
-# Optional packages
+# Additional packages
 PRODUCT_PACKAGES += \
     Basic \
-    LiveWallpapersPicker \
-    PhaseBeam
-
-# Extra Optional packages
-PRODUCT_PACKAGES += \
-    BrokenOsWalls \
+    Development \
     LatinIME \
-    BluetoothExt \
-    DashClock \
-    LockClock \
-    BrokenCenter
+    SoundRecorder \
+    VideoEditor \
+    VoiceDialer
+
+# Additional apps
+PRODUCT_PACKAGES += \
+    Apollo \
+    audio_effects.conf \
+    DSPManager \
+    libcyanogen-dsp \
+    MonthCalendarWidget \
+    OpenDelta \
+    OmniSwitch
+
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
 
 #    SlimFileManager removed until updated
 
-# Extra tools
+# Additional tools
 PRODUCT_PACKAGES += \
-    openvpn \
+    bash \
     e2fsck \
-    mke2fs \
-    tune2fs \
-    mount.exfat \
     fsck.exfat \
-    mkfs.exfat
+    htop \
+    lsof \
+    mke2fs \
+    mkfs.exfat \
+    mount.exfat \
+    nano \
+    openvpn \
+    powertop \
+    tune2fs \
+    vim \
+    ntfsfix \
+    ntfs-3g \
+    mkntfs
 
 # Stagefright FFMPEG plugin
 #PRODUCT_PACKAGES += \
@@ -252,7 +261,7 @@ PRODUCT_PACKAGES += \
 #    libnamparser
 
 #Screen recorder
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder
 
