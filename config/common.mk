@@ -217,7 +217,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     SoundRecorder \
     VideoEditor \
-    VoiceDialer
+    VoiceDialer \
+    BrokenPieces
 
 # Additional apps
 PRODUCT_PACKAGES += \
