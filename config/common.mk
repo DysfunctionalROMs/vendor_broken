@@ -235,13 +235,19 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimCenter \
     SlimFileManager \
     SlimLauncher \
     LatinIME \
     BluetoothExt \
-    DashClock
-
+    DashClock \
+    BrokenOsWalls
+    #BrokenCenter
+    
+#Screen recorder
+#PRODUCT_PACKAGES += \
+    ScreenRecorder \
+    libscreenrecorder
+    
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \
@@ -258,11 +264,6 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
     libnamparser
-
-#Screen recorder
-#PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
