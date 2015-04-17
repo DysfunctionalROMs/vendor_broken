@@ -210,57 +210,54 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Additional packages
+# Required packages
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+    Development \
+    SpareParts \
+    Superuser \
+    su
+
+# Optional packages
 PRODUCT_PACKAGES += \
     Basic \
-    Development \
-    LatinIME \
-    SoundRecorder \
-    VideoEditor \
-    VoiceDialer \
-    BrokenPieces \
-    LockClock
+    HoloSpiralWallpaper \
+    NoiseField \
+    Galaxy4 \
+    LiveWallpapersPicker \
+    PhaseBeam
 
-# Additional apps
+# DSPManager
 PRODUCT_PACKAGES += \
-    Apollo \
-    audio_effects.conf \
     DSPManager \
     libcyanogen-dsp \
-    MonthCalendarWidget \
-    OpenDelta \
-    OmniSwitch
+    audio_effects.conf
 
+# Extra Optional packages
 PRODUCT_PACKAGES += \
-    CellBroadcastReceiver
+    SlimCenter \
+    SlimFileManager \
+    SlimLauncher \
+    LatinIME \
+    BluetoothExt \
+    DashClock
 
-#    SlimFileManager removed until updated
-
-# Additional tools
+# Extra tools
 PRODUCT_PACKAGES += \
-    bash \
-    e2fsck \
-    fsck.exfat \
-    htop \
-    lsof \
-    mke2fs \
-    mkfs.exfat \
-    mount.exfat \
-    nano \
     openvpn \
-    powertop \
+    e2fsck \
+    mke2fs \
     tune2fs \
-    vim \
-    ntfsfix \
-    ntfs-3g \
-    mkntfs
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat
 
 # Stagefright FFMPEG plugin
-#PRODUCT_PACKAGES += \
-#    libstagefright_soft_ffmpegadec \
-#    libstagefright_soft_ffmpegvdec \
-#    libFFmpegExtractor \
-#    libnamparser
+PRODUCT_PACKAGES += \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec \
+    libFFmpegExtractor \
+    libnamparser
 
 #Screen recorder
 #PRODUCT_PACKAGES += \
