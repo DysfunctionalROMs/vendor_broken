@@ -80,7 +80,7 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
 
 # OmniSwitch
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch.apk
 
 # Proprietary latinime lib needed for Keyboard swyping
