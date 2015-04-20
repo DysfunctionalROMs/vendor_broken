@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/xbin/zipalign:system/xbin/zipalign
 
 # Layers Theme
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     vendor/broken/config/permissions/com.layers.theme.xml:system/etc/permissions/com.layers.theme.xml \
     vendor/broken/prebuilt/common/etc/Layers.apk:system/app/Layers/Layers.apk
 
