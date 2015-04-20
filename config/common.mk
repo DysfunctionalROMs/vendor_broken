@@ -240,8 +240,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     DashClock \
-    BrokenOsWalls
-    #BrokenCenter
+    BrokenOsWalls \
+    BrokenCenter
     
 #Screen recorder
 #PRODUCT_PACKAGES += \
