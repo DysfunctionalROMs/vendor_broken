@@ -240,11 +240,12 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     DashClock \
+    LockClock \
     BrokenOsWalls \
     BrokenCenter
     
 #Screen recorder
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     ScreenRecorder \
     libscreenrecorder
     
