@@ -305,7 +305,7 @@ endif
 
 # Versioning System
 # BrokenOs freeze code
-RELEASE = FALSE
+RELEASE = TRUE
 BROKEN_VERSION_MAJOR = 5.1.1
 BROKEN_VERSION_MINOR = build
 BROKEN_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
