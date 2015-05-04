@@ -236,7 +236,6 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimFileManager \
-    SlimLauncher \
     LatinIME \
     BluetoothExt \
     DashClock \
