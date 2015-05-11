@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
 
 # OmniSwitch
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch.apk
+    vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch/OmniSwitch.apk
 
 # Proprietary latinime lib needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
