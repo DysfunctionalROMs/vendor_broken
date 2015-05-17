@@ -14,6 +14,11 @@ usage()
     echo -e "        2 - make dirty"
     echo -e "        3 - make magic"
     echo -e "        4 - make kernelclean"
+    echo -e "        5 - make appclean"
+    echo -e "        6 - make imgclean"
+    echo -e "        7 - make systemclean"
+    echo -e "        8 - make recoveryclean"
+    echo -e "        9 - make rootclean"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -f Build with prebuilt chromium"
     echo -e "    -i  Static Initlogo"
@@ -141,6 +146,31 @@ elif [ "$opt_clean" -eq 4 ]; then
     make kernelclean >/dev/null
     echo -e ""
     echo -e ${bldblu}"All kernel components have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 5 ]; then
+    make appclean >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"All apps have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 6 ]; then
+    make imgclean >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"All imgs have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 7 ]; then
+    make systemclean >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"All system components have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 8 ]; then
+    make recoveryclean >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"All recovery components have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 9 ]; then
+    make rootclean >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"Root components have been removed"${txtrst}
     echo -e ""
 fi
 
