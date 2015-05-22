@@ -244,9 +244,9 @@ PRODUCT_PACKAGES += \
     BrokenCenter
     
 #Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
+#PRODUCT_PACKAGES += \
+#    ScreenRecorder \
+#    libscreenrecorder
     
 # Extra tools
 PRODUCT_PACKAGES += \
