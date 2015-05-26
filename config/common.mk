@@ -88,8 +88,8 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
 # Viper4Android
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
+#PRODUCT_COPY_FILES += \
+#    vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
 
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
@@ -242,6 +242,10 @@ PRODUCT_PACKAGES += \
     LockClock \
     BrokenOsWalls \
     BrokenCenter
+
+# AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
     
 #Screen recorder
 #PRODUCT_PACKAGES += \
