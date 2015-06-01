@@ -16,6 +16,7 @@ add_lunch_combo broken_flounder-userdebug
 add_lunch_combo broken_ghost-userdebug
 add_lunch_combo broken_grouper-userdebug
 add_lunch_combo broken_hammerhead-userdebug
+add_lunch_combo broken_i605-userdebug
 add_lunch_combo broken_l900-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
 add_lunch_combo broken_lt03wifi-userdebug
@@ -30,6 +31,7 @@ add_lunch_combo broken_quincyatt-userdebug
 add_lunch_combo broken_quincytmo-userdebug
 add_lunch_combo broken_shamu-userdebug
 add_lunch_combo broken_skyrocket-userdebug
+add_lunch_combo broken_t0lte-userdebug
 add_lunch_combo broken_t769-userdebug
 add_lunch_combo broken_tomato-userdebug
 add_lunch_combo broken_toro-userdebug
