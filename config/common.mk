@@ -338,9 +338,9 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    broken.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
+    broken.ota.version=$(PRODUCT_VERSION_MAINTENANCE) \
     ro.broken.version=$(BROKEN_VERSION) \
     ro.mod.version=$(BROKEN_MOD_VERSION) \
-    ro.broken.buildtype=$(BROKEN_BUILD_TYPE)
+    ro.broken.type=$(PLATFORM_VERSION_CODENAME)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
