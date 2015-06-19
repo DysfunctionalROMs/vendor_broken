@@ -248,9 +248,9 @@ PRODUCT_PACKAGES += \
     AudioFX
     
 #Screen recorder
-#PRODUCT_PACKAGES += \
-#    ScreenRecorder \
-#    libscreenrecorder
+PRODUCT_PACKAGES += \
+    ScreenRecorder \
+    libscreenrecorder
     
 # Extra tools
 PRODUCT_PACKAGES += \
