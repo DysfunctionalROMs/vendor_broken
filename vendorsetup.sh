@@ -11,7 +11,6 @@ add_lunch_combo broken_d852-userdebug
 add_lunch_combo broken_deb-userdebug
 add_lunch_combo broken_dlx-userdebug
 add_lunch_combo broken_falcon-userdebug
-add_lunch_combo broken_fhd-userdebug
 add_lunch_combo broken_flo-userdebug
 add_lunch_combo broken_flounder-userdebug
 add_lunch_combo broken_ghost-userdebug
@@ -21,6 +20,7 @@ add_lunch_combo broken_i605-userdebug
 add_lunch_combo broken_l900-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
 add_lunch_combo broken_lt03wifi-userdebug
+add_lunch_combo broken_moorefield-userdebug
 add_lunch_combo broken_mt2-userdebug
 add_lunch_combo broken_m7-userdebug
 add_lunch_combo broken_m7vzw-userdebug
