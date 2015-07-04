@@ -36,9 +36,9 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/backup.conf:system/etc/backup.conf
 
 # Chromium Prebuilt
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
--include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
-endif
+#ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+#-include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+#endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -310,7 +310,6 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
-# Versioning System
 # BrokenOs freeze code
 RELEASE = FALSE
 TESTING = FALSE
