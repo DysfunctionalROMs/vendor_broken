@@ -36,7 +36,6 @@ add_lunch_combo broken_t0lte-userdebug
 add_lunch_combo broken_t769-userdebug
 add_lunch_combo broken_tomato-userdebug
 add_lunch_combo broken_toro-userdebug
-add_lunch_combo broken_trltespr-userdebug
 add_lunch_combo broken_victara-userdebug
 add_lunch_combo broken_ville-userdebug
 add_lunch_combo broken_vs980-userdebug
