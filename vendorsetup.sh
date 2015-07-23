@@ -23,7 +23,6 @@ add_lunch_combo broken_l900-userdebug
 add_lunch_combo broken_lt033g-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
 add_lunch_combo broken_lt03wifi-userdebug
-add_lunch_combo broken_moorefield-userdebug
 add_lunch_combo broken_mt2-userdebug
 add_lunch_combo broken_m7-userdebug
 add_lunch_combo broken_m7vzw-userdebug
@@ -43,3 +42,4 @@ add_lunch_combo broken_victara-userdebug
 add_lunch_combo broken_ville-userdebug
 add_lunch_combo broken_vs980-userdebug
 add_lunch_combo broken_vs985-userdebug
+add_lunch_combo broken_Z00A-userdebug
