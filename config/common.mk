@@ -84,9 +84,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch/OmniSwitch.apk
 
-# Proprietary latinime lib needed for Keyboard swyping
+# Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # Viper4Android
 #PRODUCT_COPY_FILES += \
