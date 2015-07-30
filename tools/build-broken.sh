@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export BEEP=vendor/broken/proprietary/common/system/media/audio/ringtones/ImBroken.ogg
+#export BEEP=vendor/broken/proprietary/common/system/media/audio/ringtones/ImBroken.ogg
 
 usage()
 {
