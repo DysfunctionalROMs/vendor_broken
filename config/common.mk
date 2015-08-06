@@ -232,7 +232,8 @@ PRODUCT_PACKAGES += \
     DashClock \
     LockClock \
     BrokenOsWalls \
-    BrokenCenter
+    BrokenCenter \
+    WallpaperPicker
 
 # AudioFX
 PRODUCT_PACKAGES += \
