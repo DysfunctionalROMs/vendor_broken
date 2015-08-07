@@ -20,7 +20,6 @@ usage()
     echo -e "        8 - make recoveryclean"
     echo -e "        9 - make rootclean"
     echo -e "    -d  Use dex optimizations"
-    echo -e "    -f Build with prebuilt chromium"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
     echo -e "    -s  Sync before build"
@@ -92,7 +91,6 @@ export USE_CCACHE=1
 
 opt_clean=0
 opt_dex=0
-opt_chromium=0
 opt_initlogo=0
 opt_jobs="$CPUS"
 opt_log=0
@@ -105,7 +103,6 @@ while getopts "c:dij:psfo:z" opt; do
     case "$opt" in
     c) opt_clean="$OPTARG" ;;
     d) opt_dex=1 ;;
-    f) opt_chromium=1 ;;
     i) opt_initlogo=1 ;;
     j) opt_jobs="$OPTARG" ;;
     s) opt_sync=1 ;;
@@ -199,12 +196,6 @@ rm -f $OUTDIR/target/product/$device/system/framework/*.odex
 # initlogo
 if [ "$opt_initlogo" -ne 0 ]; then
     export BUILD_WITH_STATIC_INITLOGO=true
-fi
-
-if [ "$opt_chromium" -ne 0 ]; then
-    echo -e ""
-    echo -e ${bldblu}"Using prebuilt chromium cheat code"${txtrst}
-    export USE_PREBUILT_CHROMIUM=1
 fi
 
 # lunch device
