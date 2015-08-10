@@ -83,9 +83,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
-# Viper4Android
-#PRODUCT_COPY_FILES += \
-#    vendor/broken/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android.apk
+# Amaze File Manager
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/Amaze.apk:system/app/Amaze.apk
 
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
@@ -226,7 +226,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimFileManager \
     LatinIME \
     BluetoothExt \
     DashClock \
