@@ -231,17 +231,17 @@ PRODUCT_PACKAGES += \
     DashClock \
     LockClock \
     BrokenOsWalls \
-    BrokenCenter \
-    WallpaperPicker
+    BrokenCenter 
+    #WallpaperPicker
 
 # AudioFX
 PRODUCT_PACKAGES += \
     AudioFX
     
 #Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
+#PRODUCT_PACKAGES += \
+#    ScreenRecorder \
+#    libscreenrecorder
     
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -306,7 +306,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # BrokenOs freeze code
-RELEASE = FALSE
+RELEASE = TRUE
 TESTING = FALSE
 MILESTONE = FALSE
 BROKEN_VERSION_MAJOR = 5.1.1
