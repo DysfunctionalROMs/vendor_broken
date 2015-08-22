@@ -1,9 +1,11 @@
 #!/system/bin/sh
+. /system/etc/init.d.cfg
 if $loopy_smooth
+then
 for n in 1 2
 do
 
-  USER_LAUNCHER="ApexLauncher.apk"	# Change this to your launcher app
+  USER_LAUNCHER="NovaLauncher.apk"	# Change this to your launcher app
 
   NUMBER_OF_CHECKS=0					# Total number of rechecks before ending 1st loop
   SLEEP_TIME=0						# Number of seconds between rechecking processes
