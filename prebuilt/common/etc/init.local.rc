@@ -43,4 +43,3 @@ on property:service.adb.tcp.port=-1
 service sysinit /system/bin/sysinit
     user root
     oneshot
-    disabled
