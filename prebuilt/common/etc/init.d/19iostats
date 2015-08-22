@@ -1,5 +1,7 @@
 #!/system/bin/sh
+. /system/etc/init.d.cfg
 if $iostats
+then
 if [ -e $i/queue/iostats ];
 	then
 		echo "0" > $i/queue/iostats;
