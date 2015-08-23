@@ -1,5 +1,5 @@
 #!/system/bin/sh
-
+. /system/etc/init.d.cfg
 if $file_system_speedups
 then
 	busybox mount -o remount,noatime,barrier=0,nobh /system
