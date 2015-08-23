@@ -1,5 +1,7 @@
 #!/system/bin/sh
+. /system/etc/init.d.cfg
 if $wifisleep
+then
 sqlite=/system/xbin/sqlite3;
 wifi_idle_wait=10000;
 RETURN_VALUE=$($sqlite /data/data/com.android.providers.settings/databases/settings.db "select value from secure where name='wifi_idle_ms'");
