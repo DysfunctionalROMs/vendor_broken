@@ -1,9 +1,24 @@
 #!/system/bin/sh
+. /system/etc/init.d.cfg
 if $journalism
+then
+
+# Uncomment the following section for Oneplus One and comment out the next part
+
+#tune2fs -o journal_data_writeback /dev/block/platform/msm_sdcc.1/by-name/system
+#tune2fs -O ^has_journal /dev/block/platform/msm_sdcc.1/by-name/system
+#tune2fs -o journal_data_writeback /dev/block/platform/msm_sdcc.1/by-name/cache
+#tune2fs -O ^has_journal /dev/block/platform/msm_sdcc.1/by-name/cache
+#tune2fs -o journal_data_writeback /dev/block/platform/msm_sdcc.1/by-name/data
+#tune2fs -O ^has_journal /dev/block/platform/msm_sdcc.1/by-name/data
+
+# Comment the below section for Oneplus One. For other devices kindly update the path in lines with that device
+
 tune2fs -o journal_data_writeback /block/path/to/system
 tune2fs -O ^has_journal /block/path/to/system
 tune2fs -o journal_data_writeback /block/path/to/cache
 tune2fs -O ^has_journal /block/path/to/cache
 tune2fs -o journal_data_writeback /block/path/to/data
 tune2fs -O ^has_journal /block/path/to/data
+
 fi
