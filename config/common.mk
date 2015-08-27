@@ -232,7 +232,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     BrokenOsWalls \
     BrokenCenter \
-    WallpaperPicker
+    WallpaperPicker \
+    SlimOTA
 
 # AudioFX
 PRODUCT_PACKAGES += \
