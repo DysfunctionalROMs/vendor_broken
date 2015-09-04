@@ -230,9 +230,9 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     DashClock \
     LockClock \
-    BrokenOsWalls \
     WallpaperPicker \
-    SlimOTA
+    SlimOTA \
+    BrokenWalls
 
 # AudioFX
 PRODUCT_PACKAGES += \
