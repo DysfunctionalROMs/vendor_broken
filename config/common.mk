@@ -73,7 +73,7 @@ PRODUCT_COPY_FILES += \
 
 # Workaround for NovaLauncher zipalign fails
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
+    vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
 # OmniSwitch
 PRODUCT_COPY_FILES += \
@@ -85,11 +85,11 @@ PRODUCT_COPY_FILES += \
 
 # Amaze File Manager
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/Amaze.apk:system/app/Amaze.apk
+    vendor/broken/prebuilt/common/app/Amaze.apk:system/app/Amaze/Amaze.apk
 
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor.apk
+    vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
 #Init.d Support
 PRODUCT_COPY_FILES += \
