@@ -75,10 +75,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
-# OmniSwitch
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/OmniSwitch.apk:system/priv-app/OmniSwitch/OmniSwitch.apk
-
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
