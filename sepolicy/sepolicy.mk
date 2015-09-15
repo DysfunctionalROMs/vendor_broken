@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from CM
+# inherit from Broken
 #
 
 BOARD_SEPOLICY_DIRS += \
