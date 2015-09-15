@@ -336,4 +336,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.mod.version=$(BROKEN_MOD_VERSION) \
     ro.broken.type=$(PLATFORM_VERSION_CODENAME)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
+#EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
