@@ -201,9 +201,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
-    SpareParts \
-    Superuser \
-    su
+    SpareParts
+#    Superuser \
+#    su
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -229,8 +229,8 @@ PRODUCT_PACKAGES += \
     Browser
 
 # AudioFX
-PRODUCT_PACKAGES += \
-    AudioFX
+#PRODUCT_PACKAGES += \
+#    AudioFX
     
 #Screen recorder
 PRODUCT_PACKAGES += \
@@ -248,19 +248,19 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     mkfs.f2fs \
     fsck.f2fs \
-    fibmap.f2fs \
-    ntfsfix \
-    ntfs-3g
+    fibmap.f2fs 
+#    ntfsfix \
+#    ntfs-3g
 
 # Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
+#PRODUCT_PACKAGES += \
+#    libffmpeg_extractor \
+#    libffmpeg_omx \
+#    media_codecs_ffmpeg.xml
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    media.sf.omx-plugin=libffmpeg_omx.so \
+#    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
