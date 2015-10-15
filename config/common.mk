@@ -209,7 +209,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam
+    PhaseBeam \
+    SlimLauncher
 
 # DSPManager
 PRODUCT_PACKAGES += \
