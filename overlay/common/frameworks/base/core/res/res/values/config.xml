@@ -67,5 +67,16 @@
         <item>.*com.antutu.benchmark.*,2</item>
     </string-array> -->
 
+    <!-- Set default widget options to use Google clock -->
+    <string name="widget_default_package_name">com.google.android.deskclock</string>
+    <string name="widget_default_class_name">com.android.alarmclock.DigitalAppWidgetProvider</string>
+
+    <!-- Set default messaging app to Google Messenger -->
+    <string name="default_sms_application">com.google.android.apps.messaging</string>
+
+    <!-- Set defaults for Google Services -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;</string>
+    <string name="config_persistentDataPackageName">com.google.android.gms</string>
+
 </resources>
 
