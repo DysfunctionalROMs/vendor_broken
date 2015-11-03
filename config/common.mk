@@ -254,14 +254,14 @@ PRODUCT_PACKAGES += \
 #    ntfs-3g
 
 # Stagefright FFMPEG plugin
-#PRODUCT_PACKAGES += \
-#    libffmpeg_extractor \
-#    libffmpeg_omx \
-#    media_codecs_ffmpeg.xml
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
 
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    media.sf.omx-plugin=libffmpeg_omx.so \
-#    media.sf.extractor-plugin=libffmpeg_extractor.so
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
 
 # TCM (TCP Connection Management)
 PRODUCT_PACKAGES += \
@@ -345,4 +345,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.mod.version=$(BROKEN_MOD_VERSION) \
     ro.broken.type=$(PLATFORM_VERSION_CODENAME)
 
-#EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
+EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
