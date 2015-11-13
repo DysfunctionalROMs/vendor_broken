@@ -5,7 +5,6 @@
 
 export C=/tmp/backupdir
 export S=/system
-export V=Broken-v2.3
 
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
@@ -21,15 +20,6 @@ preserve_addon_d() {
 restore_addon_d() {
   cp -a /tmp/addon.d/* /system/addon.d/
   rm -rf /tmp/addon.d/
-}
-
-# Proceed only if /system is the expected major and minor version
-check_prereq() {
-if ( ! grep -q "^ro.mod.version=$V.*" /system/build.prop ); then
-  echo "Not backing up files from incompatible version: $V"
-  return 0
-fi
-return 1
 }
 
 check_blacklist() {
