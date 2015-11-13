@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/broken/prebuilt/common/etc/SuperSU.zip:system/addon.d/SuperSU.zip \
     vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
@@ -114,11 +114,6 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
     vendor/broken/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
     vendor/broken/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
-    vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # stock ui sounds
@@ -200,8 +195,6 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
     SpareParts
-#    Superuser \
-#    su
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -343,4 +336,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.mod.version=$(BROKEN_MOD_VERSION) \
     ro.broken.type=$(PLATFORM_VERSION_CODENAME)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
+#EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
