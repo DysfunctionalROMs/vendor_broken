@@ -111,8 +111,6 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
     vendor/broken/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
     vendor/broken/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
-    vendor/broken/prebuilt/common/etc/init.d/24speedy_modified:system/etc/init.d/24speedy_modified \
-    vendor/broken/prebuilt/common/etc/init.d/25loopy_smoothness_tweak:system/etc/init.d/25loopy_smoothness_tweak \
     vendor/broken/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
     vendor/broken/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
     vendor/broken/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
