@@ -186,9 +186,9 @@ PRODUCT_COPY_FILES += \
     vendor/broken/proprietary/common/system/media/audio/notifications/Titan.ogg:system/media/audio/notifications/Titan.ogg
 
 # CM Hardware Abstraction Framework
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
+#PRODUCT_PACKAGES += \
+#   org.cyanogenmod.hardware \
+#    org.cyanogenmod.hardware.xml
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -225,9 +225,9 @@ PRODUCT_PACKAGES += \
 #    AudioFX
     
 #Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
+#PRODUCT_PACKAGES += \
+#    ScreenRecorder \
+#    libscreenrecorder
     
 # Extra tools
 PRODUCT_PACKAGES += \
