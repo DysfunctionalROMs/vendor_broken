@@ -221,8 +221,8 @@ PRODUCT_PACKAGES += \
     Browser
 
 # AudioFX
-#PRODUCT_PACKAGES += \
-#    AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
     
 #Screen recorder
 #PRODUCT_PACKAGES += \
