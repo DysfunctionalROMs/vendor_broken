@@ -69,15 +69,11 @@ PRODUCT_COPY_FILES += \
 # Layers Theme
 PRODUCT_COPY_FILES += \
     vendor/broken/config/permissions/com.layers.theme.xml:system/etc/permissions/com.layers.theme.xml \
-    vendor/broken/prebuilt/common/etc/Layers.apk:system/app/Layers/Layers.apk
+    vendor/broken/prebuilt/common/app/Layers.apk:system/app/Layers/Layers.apk
 
 # Workaround for NovaLauncher zipalign fails
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
-
-# Copy latinime for gesture typing
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # Amaze File Manager
 PRODUCT_COPY_FILES += \
@@ -86,6 +82,10 @@ PRODUCT_COPY_FILES += \
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+    
+# Copy latinime for gesture typing
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 #Init.d Support
 PRODUCT_COPY_FILES += \
