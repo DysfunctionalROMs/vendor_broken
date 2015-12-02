@@ -216,7 +216,7 @@ PRODUCT_PACKAGES += \
     DashClock \
     LockClock \
     WallpaperPicker \
-    SlimOTA \
+    BrokenOTA \
     BrokenWalls \
     Browser
 
