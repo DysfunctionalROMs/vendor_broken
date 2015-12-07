@@ -187,14 +187,15 @@ PRODUCT_COPY_FILES += \
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-   org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
-    SpareParts
+    SpareParts \
+    LatinIME
 
 # Optional packages
 PRODUCT_PACKAGES += \
@@ -211,7 +212,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    LatinIME \
     BluetoothExt \
     DashClock \
     LockClock \
