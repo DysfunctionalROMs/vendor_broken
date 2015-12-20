@@ -50,6 +50,12 @@ PRODUCT_COPY_FILES += \
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    
+# Debuggable by default
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
 
 # SuperSU
 PRODUCT_COPY_FILES += \
