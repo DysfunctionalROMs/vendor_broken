@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/bin/50-broken.sh:system/addon.d/50-broken.sh \
     vendor/broken/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/broken/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+    
+# Layers Backup
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
