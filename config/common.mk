@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     BrokenOTA \
     BrokenWalls \
+    BrokenCenter \
     Browser
 
 # AudioFX
