@@ -3,5 +3,5 @@
 # inherit from Broken
 #
 
-#BOARD_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS += \
     vendor/broken/sepolicy
