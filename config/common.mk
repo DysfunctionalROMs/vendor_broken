@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
     
+# Viper
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/app/Viper4Android.apk:system/app/Viper4Android/Viper4Android.apk
+    
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
