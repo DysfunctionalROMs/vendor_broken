@@ -20,4 +20,5 @@ if [ ! "$BUILD_WITH_COLORS" = "0" ]; then
     cyarev=${rev}$(tput setaf 6)
     ylwrev=${rev}$(tput setaf 3)
     blurev=${rev}$(tput setaf 4)
+    normal='tput sgr0'
 fi
