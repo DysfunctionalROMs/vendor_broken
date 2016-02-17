@@ -132,7 +132,7 @@ if [ "$opt_clean" -eq 1 ]; then
 elif [ "$opt_clean" -eq 2 ]; then
     make dirty >/dev/null
     echo -e ""
-    echo -e ${bldblu}"Full of crap"${txtrst}
+    echo -e ${bldblu}"Changelogs, build.prop and zips removed yet still full of crap"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 3 ]; then
     make magic >/dev/null
