@@ -9,6 +9,7 @@ add_lunch_combo broken_d2tmo-userdebug
 add_lunch_combo broken_d2usc-userdebug
 add_lunch_combo broken_d2vzw-userdebug
 add_lunch_combo broken_d800-userdebug
+add_lunch_combo broken_d801-userdebug
 add_lunch_combo broken_d850-userdebug
 add_lunch_combo broken_d851-userdebug
 add_lunch_combo broken_d852-userdebug
