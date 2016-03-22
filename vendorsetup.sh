@@ -25,6 +25,7 @@ add_lunch_combo broken_grouper-userdebug
 add_lunch_combo broken_hammerhead-userdebug
 add_lunch_combo broken_hercules-userdebug
 add_lunch_combo broken_i605-userdebug
+add_lunch_combo broken_kiwi-userdebug
 add_lunch_combo broken_klte-userdebug
 add_lunch_combo broken_l900-userdebug
 add_lunch_combo broken_ls990-userdebug
