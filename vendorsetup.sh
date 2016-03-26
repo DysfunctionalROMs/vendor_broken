@@ -28,6 +28,7 @@ add_lunch_combo broken_i605-userdebug
 add_lunch_combo broken_kiwi-userdebug
 add_lunch_combo broken_klte-userdebug
 add_lunch_combo broken_l900-userdebug
+add_lunch_combo broken_ls980-userdebug
 add_lunch_combo broken_ls990-userdebug
 add_lunch_combo broken_lt033g-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
