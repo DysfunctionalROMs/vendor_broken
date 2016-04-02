@@ -10,6 +10,7 @@ usage()
     echo -e ""
     echo -e ${txtbld}"  Options:"${txtrst}
     echo -e "    -c# Cleanin options before build:"
+    echo -e "        0 - make official"
     echo -e "        1 - make clean"
     echo -e "        2 - make dirty"
     echo -e "        3 - make magic"
@@ -124,7 +125,12 @@ VERSION="$PRODUCT_VERSION_MAINTENANCE.$BROKEN_VERSION_MAJOR."
 
 echo -e ${cya}"Building ${ppl}Broken ${bldylw}$VERSION"${txtrst}
 
-if [ "$opt_clean" -eq 1 ]; then
+if [ "$opt_clean" -eq 0 ]; then
+    make official >/dev/null
+    echo -e ""
+    echo -e ${bldblu}"Make sure to flip the flag in vendor OFFICIAL DEVICES ONLY"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 1 ]; then
     make clean >/dev/null
     echo -e ""
     echo -e ${bldblu}"Got rid of the garbage"${txtrst}
