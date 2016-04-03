@@ -127,6 +127,7 @@ echo -e ${cya}"Building ${ppl}Broken ${bldylw}$VERSION"${txtrst}
 
 if [ "$opt_clean" -eq 0 ]; then
     make official >/dev/null
+    export OFFICIAL=true
     echo -e ""
     echo -e ${bldblu}"Make sure to flip the flag in vendor OFFICIAL DEVICES ONLY"${txtrst}
     echo -e ""
