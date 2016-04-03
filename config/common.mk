@@ -301,7 +301,11 @@ PRODUCT_COPY_FILES += \
 endif
 
 # BrokenOs freeze code
+ifeq ($(OFFICIAL),true)
+BUILD_TYPE = OFFICIAL
+else
 BUILD_TYPE = UNOFFICIAL
+endif
 BROKEN_VERSION_MAJOR = 6.0.1
 BROKEN_VERSION_MINOR = build
 BROKEN_POSTFIX := -$(shell date +"%Y%m%d")
