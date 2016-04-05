@@ -10,7 +10,6 @@ usage()
     echo -e ""
     echo -e ${txtbld}"  Options:"${txtrst}
     echo -e "    -c# Cleanin options before build:"
-    echo -e "        0 - make official"
     echo -e "        1 - make clean"
     echo -e "        2 - make dirty"
     echo -e "        3 - make magic"
@@ -20,6 +19,7 @@ usage()
     echo -e "        7 - make systemclean"
     echo -e "        8 - make recoveryclean"
     echo -e "        9 - make rootclean"
+    echo -e "        10 - make official"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
@@ -126,11 +126,10 @@ VERSION="$PRODUCT_VERSION_MAINTENANCE.$BROKEN_VERSION_MAJOR."
 echo -e ${cya}"Building ${ppl}Broken ${bldylw}$VERSION"${txtrst}
 
 if [ "$opt_clean" -eq 0 ]; then
-    make official >/dev/null
-    export OFFICIAL=true
     echo -e ""
-    echo -e ${bldblu}"Make sure to flip the flag in vendor OFFICIAL DEVICES ONLY"${txtrst}
+    echo -e ${bldblu}"Use a fucking flag loser"${txtrst}
     echo -e ""
+    exit 1
 elif [ "$opt_clean" -eq 1 ]; then
     make clean >/dev/null
     echo -e ""
@@ -175,6 +174,12 @@ elif [ "$opt_clean" -eq 9 ]; then
     make rootclean >/dev/null
     echo -e ""
     echo -e ${bldblu}"Root components have been removed"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 10 ]; then
+    make official >/dev/null
+    export OFFICIAL=true
+    echo -e ""
+    echo -e ${bldblu}"Make sure to flip the flag in vendor OFFICIAL DEVICES ONLY"${txtrst}
     echo -e ""
 fi
 
