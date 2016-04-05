@@ -209,8 +209,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam \
-    SlimLauncher
+    PhaseBeam
 
 # DSPManager
 PRODUCT_PACKAGES += \
@@ -226,7 +225,6 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     BrokenOTA \
     BrokenWalls \
-    BrokenCenter \
     Browser
 
 # AudioFX
