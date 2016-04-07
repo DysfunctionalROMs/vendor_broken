@@ -179,7 +179,7 @@ elif [ "$opt_clean" -eq 10 ]; then
     make official >/dev/null
     export OFFICIAL=true
     echo -e ""
-    echo -e ${bldblu}"Make sure to flip the flag in vendor OFFICIAL DEVICES ONLY"${txtrst}
+    echo -e ${red}"You better be on the team if you're using this flag fucker"${txtrst}
     echo -e ""
 fi
 
