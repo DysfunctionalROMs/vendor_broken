@@ -229,6 +229,7 @@ PRODUCT_PACKAGES += \
     DashClock \
     LockClock \
     WallpaperPicker \
+    BrokenCenter \
     BrokenOTA \
     BrokenWalls \
     Browser
