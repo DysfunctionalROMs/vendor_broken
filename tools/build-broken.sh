@@ -176,6 +176,10 @@ elif [ "$opt_clean" -eq 9 ]; then
     echo -e ${bldblu}"Root components have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 10 ]; then
+    echo -e ${bldgrn}"Moving previously created official zips to OFFICIAL folder"${txtrst}
+    mkdir OFFICIALS 2> /dev/null
+    mv $OUTDIR/target/product/*/*OFFICIAL*.zip OFFICIALS 2> /dev/null
+    mv $OUTDIR/target/product/*/*OFFICIAL*.zip.md5sum OFFICIALS 2> /dev/null
     make official >/dev/null
     export OFFICIAL=true
     echo -e ""
