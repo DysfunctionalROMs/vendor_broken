@@ -64,12 +64,12 @@ RES="$?"
 if [ $RES = 1 ];then
     export OUTDIR=$OUT_DIR_COMMON_BASE/$thisDIR
     echo -e ""
-    echo -e ${cya}"External out DIR is set ($OUTDIR)"${txtrst}
+    echo -e ${bldgrn}"External out DIR is set ($OUTDIR)"${txtrst}
     echo -e ""
 elif [ $RES = 0 ];then
     export OUTDIR=$DIR/out
     echo -e ""
-    echo -e ${cya}"No external out, using default ($OUTDIR)"${txtrst}
+    echo -e ${bldgrn}"No external out, using default ($OUTDIR)"${txtrst}
     echo -e ""
 else
     echo -e ""
@@ -123,60 +123,60 @@ device="$1"
 eval $(grep "^PRODUCT_VERSION_" vendor/broken/config/common.mk | sed 's/ *//g')
 VERSION="$PRODUCT_VERSION_MAINTENANCE.$BROKEN_VERSION_MAJOR."
 
-echo -e ${cya}"Building ${ppl}Broken ${bldylw}$VERSION"${txtrst}
+echo -e ${bldgrn}"Building Broken $VERSION"${txtrst}
 
 if [ "$opt_clean" -eq 0 ]; then
     echo -e ""
-    echo -e ${bldblu}"Use a fucking flag loser"${txtrst}
+    echo -e ${bldgrn}"Use a fucking flag loser"${txtrst}
     echo -e ""
     exit 1
 elif [ "$opt_clean" -eq 1 ]; then
     make clean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"Got rid of the garbage"${txtrst}
+    echo -e ${bldgrn}"Got rid of the garbage"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 2 ]; then
     make dirty >/dev/null
     echo -e ""
-    echo -e ${bldblu}"Changelogs, build.prop and zips removed yet still full of crap"${txtrst}
+    echo -e ${bldgrn}"Changelogs, build.prop and zips removed yet still full of crap"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 3 ]; then
     make magic >/dev/null
     echo -e ""
-    echo -e ${bldblu}"Muhahaha"${txtrst}
+    echo -e ${bldgrn}"Muhahaha"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 4 ]; then
     make kernelclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"All kernel components have been removed"${txtrst}
+    echo -e ${bldgrn}"All kernel components have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 5 ]; then
     make appclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"All apps have been removed"${txtrst}
+    echo -e ${bldgrn}"All apps have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 6 ]; then
     make imgclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"All imgs have been removed"${txtrst}
+    echo -e ${bldgrn}"All imgs have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 7 ]; then
     make systemclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"All system components have been removed"${txtrst}
+    echo -e ${bldgrn}"All system components have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 8 ]; then
     make recoveryclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"All recovery components have been removed"${txtrst}
+    echo -e ${bldgrn}"All recovery components have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 9 ]; then
     make rootclean >/dev/null
     echo -e ""
-    echo -e ${bldblu}"Root components have been removed"${txtrst}
+    echo -e ${bldgrn}"Root components have been removed"${txtrst}
     echo -e ""
 elif [ "$opt_clean" -eq 10 ]; then
-    echo -e ${bldgrn}"Moving previously created official zips to OFFICIAL folder"${txtrst}
+    echo -e ${red}"Moving previously created official zips to OFFICIAL folder"${txtrst}
     mkdir OFFICIALS 2> /dev/null
     mv $OUTDIR/target/product/*/*OFFICIAL*.zip OFFICIALS 2> /dev/null
     mv $OUTDIR/target/product/*/*OFFICIAL*.zip.md5sum OFFICIALS 2> /dev/null
@@ -190,7 +190,7 @@ fi
 # sync with latest sources
 if [ "$opt_sync" -ne 0 ]; then
     echo -e ""
-    echo -e ${bldblu}"Getting the latest shit"${txtrst}
+    echo -e ${bldgrn}"Getting the latest shit"${txtrst}
     repo sync -j"$opt_jobs"
     echo -e ""
 fi
@@ -201,7 +201,7 @@ rm -f $OUTDIR/target/product/$device/obj/KERNEL_OBJ/.version
 t1=$($DATE +%s)
 
 # setup environment
-echo -e ${bldblu}"Getting ready"${txtrst}
+echo -e ${bldgrn}"Getting ready"${txtrst}
 . build/envsetup.sh
 
 # Remove system folder (this will create a new build.prop with updated build time and date)
@@ -216,11 +216,11 @@ fi
 
 # lunch device
 echo -e ""
-echo -e ${bldblu}"Getting your device"${txtrst}
+echo -e ${bldgrn}"Getting your device"${txtrst}
 lunch "broken_$device-userdebug";
 
 echo -e ""
-echo -e ${bldblu}"Off like a prom dress"${txtrst}
+echo -e ${bldgrn}"Off like a prom dress"${txtrst}
 
 # start compilation
 if [ "$opt_dex" -ne 0 ]; then
@@ -234,16 +234,16 @@ fi
 if [ "$opt_olvl" -eq 1 ]; then
     export TARGET_USE_O_LEVEL_S=true
     echo -e ""
-    echo -e ${bldgrn}"Using Os Optimization"${txtrst}
+    echo -e ${red}"Using Os Optimization"${txtrst}
     echo -e ""
 elif [ "$opt_olvl" -eq 3 ]; then
     export TARGET_USE_O_LEVEL_3=true
     echo -e ""
-    echo -e ${bldgrn}"Using O3 Optimization"${txtrst}
+    echo -e ${red}"Using O3 Optimization"${txtrst}
     echo -e ""
 else
     echo -e ""
-    echo -e ${bldgrn}"Using the default GCC Optimization Level, O2"${txtrst}
+    echo -e ${red}"Using the default GCC Optimization Level, O2"${txtrst}
     echo -e ""
 fi
 
