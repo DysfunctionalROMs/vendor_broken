@@ -25,6 +25,7 @@ usage()
     echo -e "    -j# Set jobs"
     echo -e "    -s  Sync before build"
     echo -e "    -p  Build using pipe"
+    echo -e "    -a  Enable strict aliasing"
     echo -e "    -o# Select GCC O Level"
     echo -e "        Valid O Levels are"
     echo -e "        1 (Os) or 3 (O3)"
@@ -97,10 +98,11 @@ opt_jobs="$CPUS"
 opt_log=0
 opt_sync=0
 opt_pipe=0
+opt_strict=0
 opt_olvl=0
 opt_verbose=0
 
-while getopts "c:dij:psfo:z" opt; do
+while getopts "c:dij:spaof:z" opt; do
     case "$opt" in
     c) opt_clean="$OPTARG" ;;
     d) opt_dex=1 ;;
@@ -108,6 +110,7 @@ while getopts "c:dij:psfo:z" opt; do
     j) opt_jobs="$OPTARG" ;;
     s) opt_sync=1 ;;
     p) opt_pipe=1 ;;
+    a) opt_strict=1 ;;
     o) opt_olvl="$OPTARG" ;;
     z) opt_log=1 ;;
     *) usage
@@ -225,10 +228,23 @@ echo -e ${bldgrn}"Off like a prom dress"${txtrst}
 # start compilation
 if [ "$opt_dex" -ne 0 ]; then
     export WITH_DEXPREOPT=true
+    echo -e ""
+    echo -e ${red}"Using DexOptimization"${txtrst}
+    echo -e ""
 fi
 
 if [ "$opt_pipe" -ne 0 ]; then
     export TARGET_USE_PIPE=true
+    echo -e ""
+    echo -e ${red}"Using Pipe Optimization"${txtrst}
+    echo -e ""
+fi
+
+if [ "$opt_strict" -ne 0 ]; then
+    export STRICT=true
+    echo -e ""
+    echo -e ${red}"Using Strict Aliasing"${txtrst}
+    echo -e ""
 fi
 
 if [ "$opt_olvl" -eq 1 ]; then
