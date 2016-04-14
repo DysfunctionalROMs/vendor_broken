@@ -1433,7 +1433,7 @@
   <apn carrier="T-Mobile IMS" mcc="310" mnc="260" apn="ims" type="ims" protocol="IPV6" />
   <apn carrier="MetroPCS LTE" mcc="310" mnc="260" apn="fast.metropcs.com" user="" password="" authtype="0" proxy="" port="" mmsc="http://metropcs.mmsmvno.com/mms/wapenc" type="default,mms,supl" />
   <apn carrier="MetroPCS LTE IPv6" mcc="310" mnc="260" apn="fast.metropcs.com" user="" password="" authtype="0" proxy="" port="" mmsc="http://metropcs.mmsmvno.com/mms/wapenc" type="default,mms,supl" protocol="IPV6" />
-  <apn carrier="MetroPCS" mcc="310" mnc="260" apn="fast.t-mobile.com" port="" mmsc="http://metropcs.mmsmvno.com/mms/wapenc" mvno_type="gid" mvno_match_data="6d38" type="default,mms,supl" />
+  <apn carrier="MetroPCS" mcc="310" mnc="260" apn="fast.metropcs.com" port="" mmsc="http://metropcs.mmsmvno.com/mms/wapenc" mvno_type="gid" mvno_match_data="6d38" type="default,mms,supl" />
   <apn carrier="Net10" mcc="310" mnc="260" apn="wap.tracfone" port="8080" mmsc="http://mms.tracfone.com" type="default,mms,supl" />
   <apn carrier="Family Mobile" mcc="310" mnc="260" apn="web.omwtoday.com" port="" mmsc="http://wirelessfour.mmsmvno.com/mms/wapenc" mvno_type="gid" mvno_match_data="4d4b" type="default,mms,supl" />
   <apn carrier="I-Wireless" mcc="310" mnc="260" apn="i2.iwireless.com" proxy="" port="" user="" password="" mmsc="http://mmsc.iwireless.datonair.net:6672" type="default,supl,mms" />
