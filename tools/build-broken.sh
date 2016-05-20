@@ -102,7 +102,7 @@ opt_strict=0
 opt_olvl=0
 opt_verbose=0
 
-while getopts "c:dij:spaof:z" opt; do
+while getopts "c:dij:spao:z" opt; do
     case "$opt" in
     c) opt_clean="$OPTARG" ;;
     d) opt_dex=1 ;;
