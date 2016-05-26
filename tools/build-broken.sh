@@ -20,6 +20,7 @@ usage()
     echo -e "        8 - make recoveryclean"
     echo -e "        9 - make rootclean"
     echo -e "        10 - make official"
+    echo -e "        11 - make milestone"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
@@ -187,6 +188,16 @@ elif [ "$opt_clean" -eq 10 ]; then
     export OFFICIAL=true
     echo -e ""
     echo -e ${red}"You better be on the team if you're using this flag fucker"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 11 ]; then
+    echo -e ${red}"Moving previously created milestone zips to MILESTONES folder"${txtrst}
+    mkdir MILESTONES 2> /dev/null
+    mv $OUTDIR/target/product/*/*MILESTONE*.zip MILESTONES 2> /dev/null
+    mv $OUTDIR/target/product/*/*MILESTONE*.zip.md5sum MILESTONES 2> /dev/null
+    make milestone >/dev/null
+    export MILESTONE=true
+    echo -e ""
+    echo -e ${red}"Good work assholes #StayBroken"${txtrst}
     echo -e ""
 fi
 
