@@ -21,6 +21,7 @@ usage()
     echo -e "        9 - make rootclean"
     echo -e "        10 - make official"
     echo -e "        11 - make milestone"
+    echo -e "        12 - make experimental"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
@@ -198,6 +199,16 @@ elif [ "$opt_clean" -eq 11 ]; then
     export MILESTONE=true
     echo -e ""
     echo -e ${red}"Good work assholes #StayBroken"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 12 ]; then
+    echo -e ${red}"Moving previously created experimental zips to EXPERIMENTAL folder"${txtrst}
+    mkdir EXPERIMENTAL 2> /dev/null
+    mv $OUTDIR/target/product/*/*EXPERIMENTAL*.zip EXPERIMENTAL 2> /dev/null
+    mv $OUTDIR/target/product/*/*EXPERIMENTAL*.zip.md5sum EXPERIMENTAL 2> /dev/null
+    make experimental >/dev/null
+    export EXPERIMENTAL=true
+    echo -e ""
+    echo -e ${red}"Keep on steady breaking shit #StayBroken"${txtrst}
     echo -e ""
 fi
 

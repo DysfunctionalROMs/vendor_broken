@@ -305,7 +305,11 @@ else
 ifeq ($(MILESTONE),true)
 BUILD_TYPE = MILESTONE
 else
+ifeq ($(EXPERIMENTAL),true)
+BUILD_TYPE = EXPERIMENTAL
+else
 BUILD_TYPE = UNSUPPORTED
+endif
 endif
 endif
 BROKEN_VERSION_MAJOR = 6.0.1
