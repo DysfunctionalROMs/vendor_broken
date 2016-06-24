@@ -79,10 +79,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher/NovaLauncher.apk
 
-# KernelAdiutor
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/app/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
-
 # Viper
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/app/Viper4Android.apk:system/app/Viper4Android/Viper4Android.apk
@@ -152,7 +148,8 @@ PRODUCT_PACKAGES += \
     BrokenCenter \
     BrokenOTA \
     BrokenWalls \
-    Browser
+    Browser \
+    KernelAdiutor
 
 # AudioFX
 #PRODUCT_PACKAGES += \
