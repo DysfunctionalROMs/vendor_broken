@@ -15,7 +15,6 @@ add_lunch_combo broken_d851-userdebug
 add_lunch_combo broken_d852-userdebug
 add_lunch_combo broken_d855-userdebug
 add_lunch_combo broken_deb-userdebug
-add_lunch_combo broken_draconis-userdebug
 add_lunch_combo broken_f400-userdebug
 add_lunch_combo broken_falcon-userdebug
 add_lunch_combo broken_flo-userdebug
