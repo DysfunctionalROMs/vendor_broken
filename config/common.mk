@@ -47,9 +47,15 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # SuperSU
+ifneq ($(NEEDS_SYSTEMMODE_SU),true)
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/etc/SystemModeSuperSU.zip:system/addon.d/SuperSU.zip \
+    vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+else
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/SuperSU.zip:system/addon.d/SuperSU.zip \
     vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+endif
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
