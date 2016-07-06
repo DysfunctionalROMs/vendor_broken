@@ -17,8 +17,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false \
-    ro.layers.noIcon=noIcon
+    ro.com.android.dataroaming=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
@@ -34,10 +33,6 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/bin/50-broken.sh:system/addon.d/50-broken.sh \
     vendor/broken/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/broken/prebuilt/common/etc/backup.conf:system/etc/backup.conf
-
-# Layers Backup
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -69,11 +64,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/xbin/zip:system/xbin/zip \
     vendor/broken/prebuilt/common/xbin/zipalign:system/xbin/zipalign
-
-# Layers Theme
-PRODUCT_COPY_FILES += \
-    vendor/broken/config/permissions/com.layers.theme.xml:system/etc/permissions/com.layers.theme.xml \
-    vendor/broken/prebuilt/common/app/Layers.apk:system/app/Layers/Layers.apk
 
 # Workaround for NovaLauncher zipalign fails
 PRODUCT_COPY_FILES += \
