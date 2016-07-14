@@ -145,7 +145,8 @@ PRODUCT_PACKAGES += \
     BrokenOTA \
     BrokenWalls \
     Browser \
-    KernelAdiutor
+    KernelAdiutor \
+    masquerade
 
 # AudioFX
 #PRODUCT_PACKAGES += \
