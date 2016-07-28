@@ -142,7 +142,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     WallpaperPicker \
     BrokenCenter \
-    BrokenOTA \
     BrokenWalls \
     Browser \
     KernelAdiutor \
@@ -253,6 +252,12 @@ endif
 
 ifdef BROKEN_BUILD_EXTRA
     BROKEN_POSTFIX := -$(BROKEN_BUILD_EXTRA)
+endif
+
+#Build BrokenOTA only if BUILD_TYPE isn't UNSUPPORTED
+ifneq ($(BUILD_TYPE),UNSUPPORTED)
+PRODUCT_PACKAGES += \
+    BrokenOTA
 endif
 
 # Set all versions
