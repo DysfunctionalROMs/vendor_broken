@@ -22,6 +22,7 @@ usage()
     echo -e "        10 - make official"
     echo -e "        11 - make milestone"
     echo -e "        12 - make experimental"
+    echo -e "        13 - make final"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
@@ -209,6 +210,16 @@ elif [ "$opt_clean" -eq 12 ]; then
     export EXPERIMENTAL=true
     echo -e ""
     echo -e ${red}"Keep on steady breaking shit #StayBroken"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 13 ]; then
+    echo -e ${red}"Moving previously created final zips to FINAL folder"${txtrst}
+    mkdir EXPERIMENTAL 2> /dev/null
+    mv $OUTDIR/target/product/*/*FINAL*.zip FINAL 2> /dev/null
+    mv $OUTDIR/target/product/*/*FINAL*.zip.md5sum FINAL 2> /dev/null
+    make final >/dev/null
+    export FINAL=true
+    echo -e ""
+    echo -e ${red}"End of an era. Time for bigger badder shit. #StayBroken"${txtrst}
     echo -e ""
 fi
 
