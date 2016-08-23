@@ -30,6 +30,7 @@ add_lunch_combo broken_lt01wifi-userdebug
 add_lunch_combo broken_lt03wifi-userdebug
 add_lunch_combo broken_m8-userdebug
 add_lunch_combo broken_mako-userdebug
+add_lunch_combo broken_oneplus2-userdebug
 add_lunch_combo broken_quincyatt-userdebug
 add_lunch_combo broken_quincytmo-userdebug
 add_lunch_combo broken_shamu-userdebug
