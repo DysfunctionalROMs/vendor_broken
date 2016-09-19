@@ -47,15 +47,15 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # SuperSU
-ifneq ($(NEEDS_SYSTEMMODE_SU),true)
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/etc/SystemModeSuperSU.zip:system/addon.d/SuperSU.zip \
-    vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-else
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/etc/SuperSU.zip:system/addon.d/SuperSU.zip \
-    vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-endif
+# ifneq ($(NEEDS_SYSTEMMODE_SU),true)
+# PRODUCT_COPY_FILES += \
+#     vendor/broken/prebuilt/common/etc/SystemModeSuperSU.zip:system/addon.d/SuperSU.zip \
+#     vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+# else
+# PRODUCT_COPY_FILES += \
+#     vendor/broken/prebuilt/common/etc/SuperSU.zip:system/addon.d/SuperSU.zip \
+#     vendor/broken/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+# endif
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -84,33 +84,33 @@ PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 #Init.d Support
-PRODUCT_COPY_FILES += \
-    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/broken/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
-    vendor/broken/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
-    vendor/broken/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-    vendor/broken/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/broken/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
-    vendor/broken/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
-    vendor/broken/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-    vendor/broken/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
-    vendor/broken/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
-    vendor/broken/prebuilt/common/etc/init.d/11battery:system/etc/init.d/11battery \
-    vendor/broken/prebuilt/common/etc/init.d/12touch:system/etc/init.d/12touch \
-    vendor/broken/prebuilt/common/etc/init.d/13minfree:system/etc/init.d/13minfree \
-    vendor/broken/prebuilt/common/etc/init.d/14gpurender:system/etc/init.d/14gpurender \
-    vendor/broken/prebuilt/common/etc/init.d/15sleepers:system/etc/init.d/15sleepers \
-    vendor/broken/prebuilt/common/etc/init.d/16journalism:system/etc/init.d/16journalism \
-    vendor/broken/prebuilt/common/etc/init.d/17sqlite3:system/etc/init.d/17sqlite3 \
-    vendor/broken/prebuilt/common/etc/init.d/18wifisleep:system/etc/init.d/18wifisleep \
-    vendor/broken/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
-    vendor/broken/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
-    vendor/broken/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
-    vendor/broken/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/broken/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
-    vendor/broken/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
-    vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
+#PRODUCT_COPY_FILES += \
+#    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+#    vendor/broken/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+#    vendor/broken/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
+#    vendor/broken/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
+#    vendor/broken/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
+#    vendor/broken/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+#    vendor/broken/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
+#    vendor/broken/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
+#    vendor/broken/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
+#    vendor/broken/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
+#    vendor/broken/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+#    vendor/broken/prebuilt/common/etc/init.d/11battery:system/etc/init.d/11battery \
+#    vendor/broken/prebuilt/common/etc/init.d/12touch:system/etc/init.d/12touch \
+#    vendor/broken/prebuilt/common/etc/init.d/13minfree:system/etc/init.d/13minfree \
+#    vendor/broken/prebuilt/common/etc/init.d/14gpurender:system/etc/init.d/14gpurender \
+#    vendor/broken/prebuilt/common/etc/init.d/15sleepers:system/etc/init.d/15sleepers \
+#    vendor/broken/prebuilt/common/etc/init.d/16journalism:system/etc/init.d/16journalism \
+#    vendor/broken/prebuilt/common/etc/init.d/17sqlite3:system/etc/init.d/17sqlite3 \
+#    vendor/broken/prebuilt/common/etc/init.d/18wifisleep:system/etc/init.d/18wifisleep \
+#    vendor/broken/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
+#    vendor/broken/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
+#    vendor/broken/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
+#    vendor/broken/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+#    vendor/broken/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
+#    vendor/broken/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
+#    vendor/broken/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -167,9 +167,9 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     mkfs.f2fs \
     fsck.f2fs \
-    fibmap.f2fs
-#    ntfsfix \
-#    ntfs-3g
+    fibmap.f2fs \
+    ntfsfix \
+    ntfs-3g
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
