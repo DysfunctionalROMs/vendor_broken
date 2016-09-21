@@ -27,9 +27,9 @@ add_lunch_combo broken_kiwi-userdebug
 add_lunch_combo broken_ls980-userdebug
 add_lunch_combo broken_ls990-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
-add_lunch_combo broken_lt03wifi-userdebug
 add_lunch_combo broken_m8-userdebug
 add_lunch_combo broken_mako-userdebug
+add_lunch_combo broken_n1awifi-userdebug
 add_lunch_combo broken_oneplus2-userdebug
 add_lunch_combo broken_quincyatt-userdebug
 add_lunch_combo broken_quincytmo-userdebug
