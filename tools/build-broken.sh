@@ -23,6 +23,7 @@ usage()
     echo -e "        11 - make milestone"
     echo -e "        12 - make experimental"
     echo -e "        13 - make final"
+    echo -e "        14 - fuck jack"
     echo -e "    -d  Use dex optimizations"
     echo -e "    -i  Static Initlogo"
     echo -e "    -j# Set jobs"
@@ -220,6 +221,16 @@ elif [ "$opt_clean" -eq 13 ]; then
     export FINAL=true
     echo -e ""
     echo -e ${red}"End of an era. Time for bigger badder shit. #StayBroken"${txtrst}
+    echo -e ""
+elif [ "$opt_clean" -eq 14 ]; then
+    echo -e ${red}"Disabling ninja and jack for slower build boxes"${txtrst}
+    export USE_NINJA=false
+    rm -rf ~/.jack* 2> /dev/null
+    export ANDROID_JACK_VM_ARGS="-Xmx4g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+    ./prebuilts/sdk/tools/jack-admin kill-server >/dev/null
+    ./prebuilts/sdk/tools/jack-admin start-server >/dev/null
+    make clean >/dev/null
+    echo -e ${red}"You need a better build box"${txtrst}
     echo -e ""
 fi
 
