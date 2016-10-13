@@ -14,8 +14,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     messaging \
-    Stk \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-	telephony-ext
+    Stk

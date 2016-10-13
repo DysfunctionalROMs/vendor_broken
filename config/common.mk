@@ -83,6 +83,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 #Init.d Support
 #PRODUCT_COPY_FILES += \
 #    vendor/broken/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
