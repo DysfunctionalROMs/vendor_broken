@@ -5,6 +5,9 @@ dir=$ANDROID_BUILD_TOP
 out=$dir/out/target/product
 . $dir/vendor/broken/tools/colors
 
+# Kill jack-server
+./prebuilts/sdk/tools/jack-admin kill-server
+
 export Changelog=Changelog.txt
 
 if [ -f $Changelog ];
