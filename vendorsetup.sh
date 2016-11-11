@@ -23,7 +23,6 @@ add_lunch_combo broken_flounder-userdebug
 add_lunch_combo broken_flounder_lte-userdebug
 add_lunch_combo broken_grouper-userdebug
 add_lunch_combo broken_hammerhead-userdebug
-add_lunch_combo broken_kiwi-userdebug
 add_lunch_combo broken_ls980-userdebug
 add_lunch_combo broken_ls990-userdebug
 add_lunch_combo broken_lt01wifi-userdebug
