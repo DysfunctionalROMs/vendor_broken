@@ -136,6 +136,11 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    librsjni
+
 # DSPManager
 PRODUCT_PACKAGES += \
     DSPManager \
