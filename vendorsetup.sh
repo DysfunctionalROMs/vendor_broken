@@ -1,5 +1,6 @@
 add_lunch_combo broken_a5-userdebug
 add_lunch_combo broken_angler-userdebug
+add_lunch_combo broken_athene-userdebug
 add_lunch_combo broken_bacon-userdebug
 add_lunch_combo broken_bullhead-userdebug
 add_lunch_combo broken_clark-userdebug
