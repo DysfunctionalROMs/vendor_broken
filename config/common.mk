@@ -78,7 +78,9 @@ endif
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam
+    PhaseBeam \
+    BrokenOTA \
+    BrokenWalls
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
