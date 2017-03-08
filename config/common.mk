@@ -86,7 +86,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam \
     BrokenOTA \
-    BrokenWalls
+    BrokenWalls \
+    ThemeInterfacer
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
