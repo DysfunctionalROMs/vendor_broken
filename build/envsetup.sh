@@ -110,7 +110,7 @@ function brokenremote()
 
     project="${proj//\//_}"
 
-    git remote add broken "git@github.com:BrokenROM/$pfx$project"
+    git remote add broken "git@github.com:DysfunctionalROMs/$pfx$project"
     echo "Remote 'broken' created"
 }
 
@@ -193,7 +193,7 @@ function broken_push()
         proj="android_$proj"
     fi
 
-    git $path_opt push "ssh://${ssh_name}/BrokenROM/$proj" "HEAD:refs/for/$branch"
+    git $path_opt push "ssh://${ssh_name}/DysfunctionalROMs/$proj" "HEAD:refs/for/$branch"
 }
 
 
