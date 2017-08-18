@@ -148,13 +148,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/broken/overlay/common \
     vendor/broken/overlay/dictionaries
@@ -186,6 +179,13 @@ $(eval TARGET_BOOTANIMATION_NAME := $(shell \
   echo $(TARGET_BOOTANIMATION_NAME); ))
 endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
+
+# These packages are excluded from user builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    procmem \
+    procrank
+endif
 
 PRODUCT_COPY_FILES += \
     vendor/broken/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
