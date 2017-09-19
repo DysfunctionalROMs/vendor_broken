@@ -174,7 +174,7 @@ function cafremote()
 function broken_push()
 {
     local branch ssh_name path_opt proj
-    branch="noog7.1"
+    branch="o8.0"
     ssh_name="broken_review"
     path_opt=
 
