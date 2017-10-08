@@ -92,7 +92,7 @@ function setup_vendor() {
         COMMON=0
     fi
 
-    if [ "$5" == "true" ] || [ "$5" == "1" ]; then
+    if [ "$5" == "false" ] || [ "$5" == "0" ]; then
         VENDOR_STATE=1
         VENDOR_RADIO_STATE=1
     else
@@ -454,16 +454,16 @@ function write_header() {
             printf "# Copyright (C) 2016 The CyanogenMod Project\n" > $1
         fi
         if [ $YEAR -eq 2017 ]; then
-            printf "# Copyright (C) 2017 The LineageOS Project\n" >> $1
+            printf "# Copyright (C) 2017 SlimRoms\n" >> $1
         elif [ $INITIAL_COPYRIGHT_YEAR -eq $YEAR ]; then
-            printf "# Copyright (C) $YEAR The LineageOS Project\n" >> $1
+            printf "# Copyright (C) $YEAR SlimRoms\n" >> $1
         elif [ $INITIAL_COPYRIGHT_YEAR -le 2017 ]; then
-            printf "# Copyright (C) 2017-$YEAR The LineageOS Project\n" >> $1
+            printf "# Copyright (C) 2017-$YEAR SlimRoms\n" >> $1
         else
-            printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The LineageOS Project\n" >> $1
+            printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR SlimRoms\n" >> $1
         fi
     else
-        printf "# Copyright (C) $YEAR The LineageOS Project\n" > $1
+        printf "# Copyright (C) $YEAR SlimRoms\n" > $1
     fi
 
     cat << EOF >> $1
@@ -555,6 +555,7 @@ function _adb_connected {
 # parse_file_list:
 #
 # $1: input file
+# $2: blob section in file - optional
 #
 # Sets PRODUCT_PACKAGES and PRODUCT_COPY_FILES while parsing the input file
 #
@@ -566,6 +567,14 @@ function parse_file_list() {
         echo "Input file "$1" does not exist!"
         exit 1
     fi
+
+    if [ $# -eq 2 ]; then
+        LIST=$TMPDIR/files.txt
+        cat $1 | sed -n '/# '"$2"'/I,/^\s*$/p' > $LIST
+    else
+        LIST=$1
+    fi
+
 
     PRODUCT_PACKAGES_LIST=()
     PRODUCT_PACKAGES_HASHES=()
@@ -595,7 +604,7 @@ function parse_file_list() {
             PRODUCT_COPY_FILES_HASHES+=("$HASH")
         fi
 
-    done < <(egrep -v '(^#|^[[:space:]]*$)' "$1" | LC_ALL=C sort | uniq)
+    done < <(egrep -v '(^#|^[[:space:]]*$)' "$LIST" | LC_ALL=C sort | uniq)
 }
 
 #
@@ -768,8 +777,8 @@ function fix_xml() {
     local XML="$1"
     local TEMP_XML="$TMPDIR/`basename "$XML"`.temp"
 
-    grep '^<?xml version' "$XML" > "$TEMP_XML"
-    grep -v '^<?xml version' "$XML" >> "$TEMP_XML"
+    grep -a '^<?xml version' "$XML" > "$TEMP_XML"
+    grep -av '^<?xml version' "$XML" >> "$TEMP_XML"
 
     mv "$TEMP_XML" "$XML"
 }
@@ -778,7 +787,8 @@ function fix_xml() {
 # extract:
 #
 # $1: file containing the list of items to extract
-# $2: path to extracted system folder, or "adb" to extract from device
+# $2: path to extracted system folder, an ota zip file, or "adb" to extract from device
+# $3: section in list file to extract - optional
 #
 function extract() {
     if [ -z "$OUTDIR" ]; then
@@ -786,7 +796,11 @@ function extract() {
         exit 1
     fi
 
-    parse_file_list "$1"
+    if [ -z "$3" ]; then
+        parse_file_list "$1"
+    else
+        parse_file_list "$1" "$3"
+    fi
 
     # Allow failing, so we can try $DEST and/or $FILE
     set +e
@@ -800,6 +814,41 @@ function extract() {
 
     if [ "$SRC" = "adb" ]; then
         init_adb_connection
+    fi
+
+    if [ -f "$SRC" ] && [ "${SRC##*.}" == "zip" ]; then
+        DUMPDIR="$CM_ROOT"/system_dump
+
+        # Check if we're working with the same zip that was passed last time.
+        # If so, let's just use what's already extracted.
+        MD5=`md5sum "$SRC"| awk '{print $1}'`
+        OLDMD5=`cat "$DUMPDIR"/zipmd5.txt`
+
+        if [ "$MD5" != "$OLDMD5" ]; then
+            rm -rf "$DUMPDIR"
+            mkdir "$DUMPDIR"
+            unzip "$SRC" -d "$DUMPDIR"
+            echo "$MD5" > "$DUMPDIR"/zipmd5.txt
+
+            # Stop if an A/B OTA zip is detected. We cannot extract these.
+            if [ -a "$DUMPDIR"/payload.bin ]; then
+                echo "A/B style OTA zip detected. This is not supported at this time. Stopping..."
+                exit 1
+            # If OTA is block based, extract it.
+            elif [ -a "$DUMPDIR"/system.new.dat ]; then
+                echo "Converting system.new.dat to system.img"
+                python "$CM_ROOT"/vendor/cm/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
+                mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
+                echo "Requesting sudo access to mount the system.img"
+                sudo mount -o loop "$DUMPDIR"/system.img "$DUMPDIR"/tmp
+                cp -r "$DUMPDIR"/tmp/* "$DUMPDIR"/system/
+                sudo umount "$DUMPDIR"/tmp
+                rm -rf "$DUMPDIR"/tmp "$DUMPDIR"/system.img
+            fi
+        fi
+
+        SRC="$DUMPDIR"
     fi
 
     if [ "$VENDOR_STATE" -eq "0" ]; then
@@ -828,6 +877,8 @@ function extract() {
             TARGET="$FROM"
             OUTPUT_DIR="$OUTPUT_DIR/rootfs"
             TMP_DIR="$TMP_DIR/rootfs"
+        elif [ -f "$SRC/$FILE" ] && [ "$SRC" != "adb" ]; then
+            TARGET="$FROM"
         else
             TARGET="system/$FROM"
             FILE="system/$FILE"
