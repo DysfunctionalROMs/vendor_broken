@@ -1,0 +1,8 @@
+﻿
+bootstrap_go_package {
+    name: "soong-broken",
+    pkgPath: "broken/soong/android",
+    srcs: [
+        "android/variable.go",
+    ],
+}
