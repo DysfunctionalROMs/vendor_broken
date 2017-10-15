@@ -108,10 +108,10 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt
 
-ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
+##ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 ## Slim Framework
-include frameworks/slim/slim_framework.mk
-endif
+##include frameworks/slim/slim_framework.mk
+##endif
 
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
