@@ -316,10 +316,10 @@ if [ "$opt_log" -ne 0 ]; then
     echo -e ${bldgrn}"Your build will be logged in 'build-logs'"${txtrst}
     echo -e ""
     # log build into 'build-logs'
-    make -j"$opt_jobs" broken 2>&1 | tee build-logs/broken_$device-$(date "+%Y%m%d").txt
+    make -j"$opt_jobs" otapackage 2>&1 | tee build-logs/broken_$device-$(date "+%Y%m%d").txt
 else
     # build normally
-    make -j"$opt_jobs" broken
+    make -j"$opt_jobs" otapackage
 
 fi
 
