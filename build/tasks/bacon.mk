@@ -14,33 +14,33 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Slim OTA update package
+# Broken OTA update package
 
 # Build colors
 
 ifneq ($(BUILD_WITH_COLORS),0)
-  CL_SLIM="\033[38;5;24m"
+  CL_BROKEN="\033[38;5;24m"
   CL_SGRY="\033[38;5;239m"
   CL_RST="\033[0m"
 endif
 
-SLIM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(SLIM_MOD_VERSION).zip
+BROKEN_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BROKEN_MOD_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SLIM_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(SLIM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SLIM_TARGET_PACKAGE).md5sum
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BROKEN_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(BROKEN_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BROKEN_TARGET_PACKAGE).md5sum
 	@echo -e " "
-	@echo -e ${CL_SLIM}" "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                              _______________________________________________  "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                             /                                  slimroms.org | "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                            /   _____________________________________________| "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                           /   /                                               "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                          /   /  _  _      "${CL_SGRY}" ______                             "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                         /   /  | |(_)     "${CL_SGRY}"(_____ \                            "${CL_SLIM}
-	@echo -e ${CL_SLIM}"                        /   /   | | _ _____ "${CL_SGRY}"_____) )___  _____  ___            "${CL_SLIM}
-	@echo -e ${CL_SLIM}"  _____________________/   /    | || |     |"${CL_SGRY}"  __  // _ \|     |/___)           "${CL_SLIM}
-	@echo -e ${CL_SLIM}" |                        /     | || | | | |"${CL_SGRY}" |  \ \ |_| | | | |___ |           "${CL_SLIM}
-	@echo -e ${CL_SLIM}" |_______________________/       \_)_|_|_|_|"${CL_SGRY}"_|   |_\___/|_|_|_(___/            "${CL_SLIM}
-	@echo -e ${CL_SLIM}" "${CL_SLIM}
-	@echo -e ${CL_CYN}"Package Complete: $(SLIM_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_BROKEN}" "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                              _______________________________________________  "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                             /                                  brokenroms.org | "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                            /   _____________________________________________| "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                           /   /                                               "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                          /   /  _  _      "${CL_SGRY}" ______                             "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                         /   /  | |(_)     "${CL_SGRY}"(_____ \                            "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"                        /   /   | | _ _____ "${CL_SGRY}"_____) )___  _____  ___            "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}"  _____________________/   /    | || |     |"${CL_SGRY}"  __  // _ \|     |/___)           "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}" |                        /     | || | | | |"${CL_SGRY}" |  \ \ |_| | | | |___ |           "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}" |_______________________/       \_)_|_|_|_|"${CL_SGRY}"_|   |_\___/|_|_|_(___/            "${CL_BROKEN}
+	@echo -e ${CL_BROKEN}" "${CL_BROKEN}
+	@echo -e ${CL_CYN}"Package Complete: $(BROKEN_TARGET_PACKAGE)"${CL_RST}

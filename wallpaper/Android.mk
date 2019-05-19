@@ -14,4 +14,4 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := SlimWallpaperResizer
 
-WALLPAPER := $(shell ./vendor/slim/wallpaper/generate-wallpaper.sh)
+WALLPAPER := $(shell ./vendor/broken/wallpaper/generate-wallpaper.sh)

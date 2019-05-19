@@ -1,6 +1,6 @@
 #
 #
-# Slim specific variable clears
+# Broken specific variable clears
 #
 #
 

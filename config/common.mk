@@ -22,17 +22,17 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/slim/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh
+    vendor/broken/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/broken/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/broken/prebuilt/common/bin/50-broken.sh:system/addon.d/50-broken.sh
 
-# SLIM-specific init file
+# BROKEN-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/init.slim.rc:system/etc/init/init.slim.rc
+    vendor/broken/prebuilt/common/etc/init.broken.rc:system/etc/init/init.broken.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/broken/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -40,8 +40,8 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/slim/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/broken/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/broken/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
 # debug packages
 ifneq ($(TARGET_BUILD_VARIENT),user)
@@ -51,7 +51,7 @@ endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/slim/config/twrp.mk
+include vendor/broken/config/twrp.mk
 endif
 
 # Do not include art debug targets
@@ -74,19 +74,18 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    bootanimation.zip \
     SlimLauncher \
-    SlimWallpaperResizer \
-    SlimWallpapers \
+    BrokenWallpaperResizer \
+    BrokenWallpapers \
     LatinIME \
     BluetoothExt \
     WallpaperPicker
-#    SlimFileManager removed until updated
+#    BrokenFileManager removed until updated
 
-ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
-## Slim Framework
-include frameworks/slim/slim_framework.mk
-endif
+#ifneq ($(DISABLE_BROKEN_FRAMEWORK), true)
+## Broken Framework
+#include frameworks/broken/broken_framework.mk
+#endif
 
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
@@ -107,51 +106,83 @@ PRODUCT_PACKAGES += \
     mkfs.exfat
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/slim/overlay/common \
-    vendor/slim/overlay/dictionaries
+    vendor/broken/overlay/common \
+    vendor/broken/overlay/dictionaries
+
+# Boot animation include
+ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
+
+# determine the smaller dimension
+TARGET_BOOTANIMATION_SIZE := $(shell \
+  if [ "$(TARGET_SCREEN_WIDTH)" -lt "$(TARGET_SCREEN_HEIGHT)" ]; then \
+    echo $(TARGET_SCREEN_WIDTH); \
+  else \
+    echo $(TARGET_SCREEN_HEIGHT); \
+  fi )
+
+# get a sorted list of the sizes
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/broken/prebuilt/common/bootanimation))
+bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
+
+# find the appropriate size and set
+define check_and_set_bootanimation
+$(eval TARGET_BOOTANIMATION_NAME := $(shell \
+  if [ -z "$(TARGET_BOOTANIMATION_NAME)" ]; then \
+    if [ "$(1)" -le "$(TARGET_BOOTANIMATION_SIZE)" ]; then \
+      echo $(1); \
+      exit 0; \
+    fi;
+  fi;
+  echo $(TARGET_BOOTANIMATION_NAME); ))
+endef
+$(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
+
+PRODUCT_COPY_FILES += \
+    vendor/broken/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+endif
 
 # Versioning System
-# Slim version.
+# Broken version.
 PRODUCT_VERSION_MAJOR = $(PLATFORM_VERSION)
 PRODUCT_VERSION_MINOR = build
 PRODUCT_VERSION_MAINTENANCE = 0.1
-ifdef SLIM_BUILD_EXTRA
-    SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
+ifdef BROKEN_BUILD_EXTRA
+    BROKEN_POSTFIX := -$(BROKEN_BUILD_EXTRA)
 endif
-ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
-endif
-
-ifeq ($(SLIM_BUILD_TYPE),DM)
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
+ifndef BROKEN_BUILD_TYPE
+    BROKEN_BUILD_TYPE := UNOFFICIAL
 endif
 
-ifndef SLIM_POSTFIX
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+ifeq ($(BROKEN_BUILD_TYPE),DM)
+    BROKEN_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifndef BROKEN_POSTFIX
+    BROKEN_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
 
 # Set all versions
-SLIM_VERSION := 9.0
-SLIM_MOD_VERSION := Slim-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)$(SLIM_POSTFIX)
+BROKEN_VERSION := 9.0
+BROKEN_MOD_VERSION := Broken-$(BROKEN_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(BROKEN_BUILD_TYPE)$(BROKEN_POSTFIX)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    slim.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.slim.version=$(SLIM_VERSION) \
-    ro.modversion=$(SLIM_MOD_VERSION) \
-    ro.slim.buildtype=$(SLIM_BUILD_TYPE)
+    broken.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
+    ro.broken.version=$(BROKEN_VERSION) \
+    ro.modversion=$(BROKEN_MOD_VERSION) \
+    ro.broken.buildtype=$(BROKEN_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.slim.version=$(SLIM_VERSION) \
+    ro.broken.version=$(BROKEN_VERSION) \
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/config/permissions/privapp-permissions-slim.xml:system/etc/permissions/privapp-permissions-slim.xml
+    vendor/broken/config/permissions/privapp-permissions-broken.xml:system/etc/permissions/privapp-permissions-broken.xml
 
-EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
+EXTENDED_POST_PROCESS_PROPS := vendor/broken/tools/broken_process_props.py
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-  vendor/slim/build/target/product/security/slim
+  vendor/broken/build/target/product/security/broken
 
--include vendor/slim-priv/keys/keys.mk
+-include vendor/broken-priv/keys/keys.mk
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)

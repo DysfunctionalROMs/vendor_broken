@@ -1,3 +1,3 @@
-. "$(gettop)/vendor/slim/build/envsetup.sh"
+. "$(gettop)/vendor/broken/build/envsetup.sh"
 
-slim_device_combos
+broken_device_combos
